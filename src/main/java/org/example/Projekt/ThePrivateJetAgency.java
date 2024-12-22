@@ -1,6 +1,7 @@
 package org.example.Projekt;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class ThePrivateJetAgency extends JFrame {
     private JPanel frame;
@@ -72,4 +73,18 @@ public class ThePrivateJetAgency extends JFrame {
     private JButton buttonClear;
     private JButton buttonNurAktuelleReisen;
     private JButton alleReisenAnzeigenButton;
+
+    public ThePrivateJetAgency () {
+        setTitle("The Private Jet Agency");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setContentPane(frame);
+        setSize(1200,800);
+        setVisible(true);
+
+        textAreaReiseAusgabe.setPreferredSize(new Dimension(1200,800));
+    }
+
+    public static void main(String[] args) {
+        ThePrivateJetAgency tpja1 = new ThePrivateJetAgency();
+    }
 }
