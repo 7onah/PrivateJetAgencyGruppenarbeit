@@ -9,3 +9,7 @@ Konstruktor in "The Private Jet Agency" Klasse angelegt, Größe der Text Area "
 
 23.12.2024 Sara Paudler:
 Die Klasse "Reise" erstellt, die Variablen der Klasse hinzugefügt und den Konstruktor generiert
+
+23.12.2024 Melina Slaschjow:
+Methode "Reisedaten" wurde hinzugefügt 
+
