@@ -27,4 +27,23 @@ public class Reise {
         this.abholort = abholort;
         this.jetGroesse = jetGroesse;
     }
+
+    public String getReisestatus() { return reisestatus; }
+
+    public String reisedaten(){
+        return "Reisestatus: " + reisestatus
+                +"\n"
+                + "Flug von " + startort + " nach " + zielort + "\n"
+                +"\n"
+                + "Abflug um " + uhrzeit + " den " + monatstag + ". " + monat + " " + jahr + "\n"
+                + "Anzahl der Reisenden: " + personenanzahl + "\n"
+                + "Gewählte Flugzeuggröße: " + jetGroesse + "\n"
+                + "Kulinarische Versorgung: " + kulinarischeVersorgung +"\n"
+                + "Abholservice: " + abholort +"\n"
+                +"\n"
+                +"\n"
+                + "----------------------------------------------------------"
+                +"\n";
+
+    }
 }
