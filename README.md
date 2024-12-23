@@ -6,3 +6,6 @@ Aufteilung der Teilgebiete des Codes, damit jeder weiß, was er umsetzen muss.
 
 22.12.2024 Sara Paudler:
 Konstruktor in "The Private Jet Agency" Klasse angelegt, Größe der Text Area "Reiseausgabe" angepasst sowie eine main Methode erstellt & hinzugefügt
+
+23.12.2024 Sara Paudler:
+Die Klasse "Reise" erstellt, die Variablen der Klasse hinzugefügt und den Konstruktor generiert
