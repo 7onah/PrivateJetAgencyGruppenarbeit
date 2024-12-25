@@ -13,3 +13,6 @@ Die Klasse "Reise" erstellt, die Variablen der Klasse hinzugefügt und den Konst
 23.12.2024 Melina Slaschjow:
 Methode "Reisedaten" wurde hinzugefügt 
 
+25.12.2024 Sara Paudler:
+ActionListener für die Monatstage Buttons erstellt, die Variable "day" erstellt, das TextField Zwischenspeicher unsichtbar gemacht sowie in jedem ActionListener den jeweiligen Tag im Zwischenpeicher abgespeichert
+
