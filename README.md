@@ -21,3 +21,7 @@ Mithilfe einer if-else-if-else-Anweisung, habe ich die Anzahl der Tage je Monat/
 (Ich habe mit der switch-Anweisung eine zweite Möglichkeit gefunden, die Anweisung umzusetzen - habe sie aber mit /* ... */ auskommentiert).
 Ich hab zudem weitere Kommentare zum besseren Verständnis des Codes ergänzt. 
 
+26.12.2024 Jonah Suiter:
+Durch das Auswählen einer der drei Radio-Buttons für die Flugzeuggröße werden die restlichen zwei von der Bearbeitung ausgenommen. Das konnte ich durch die Methode "setEnabled" erzielen. Zusätzlich werden andere ausgewählte Radio-Buttons, welche die Flugzeuggröße festlegen, abgewählt. Dafür habe ich die Methode "setSelected" verwendet um gleichzeitiges, mehrfaches Auswählen von Radio-Buttons zu verhindern. Dieser Mechanismus stellt sicher, dass immer nur ein Radio-Button gleichzeitig aktiviert ist um eine eindeutige Auswahl der Flugzeuggröße zu gewährleisten.
+
+
