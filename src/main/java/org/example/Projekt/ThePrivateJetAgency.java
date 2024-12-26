@@ -18,6 +18,7 @@ public class ThePrivateJetAgency extends JFrame {
     private JLabel labelJahr;
     private JComboBox comboBoxJahr;
     private JLabel labelMonat;
+    private JLabel labelMonatstag;
     private JComboBox comboBoxMonat;
     public JButton button1;
     private JButton button2;
@@ -71,13 +72,18 @@ public class ThePrivateJetAgency extends JFrame {
     private JTextArea textAreaBuchungAusgabe;
     private JButton buttonLoeschen;
     private JScrollPane ScrollPaneReise;
-    private JScrollPane JScrollPaneReise;
+    private JScrollPane ScrollPaneAlleReisen;
     private JTextField textFieldZwischenspeicher;
     private JButton buttonClear;
     private JButton buttonNurAktuelleReisen;
     private JButton alleReisenAnzeigenButton;
 
+
     int day; // Variable für Monatstage definieren
+
+    private boolean aktiviertGross = false;     // Variable, die den Aktivierungszustand des Radio-Buttons "aktiviertGross" beschreibt. Der initiale Zustand ist false, sprich deaktiviert
+    private boolean aktiviertMittel = false;    // Variable, die den Aktivierungszustand des Radio-Buttons "aktiviertMittel" beschreibt. Der initiale Zustand ist false, sprich deaktiviert
+    private boolean aktiviertKlein = false;     // Variable, die den Aktivierungszustand des Radio-Buttons "aktiviertKlein" beschreibt. Der initiale Zustand ist false, sprich deaktiviert
 
     // Beginn Konstruktor
     public ThePrivateJetAgency () {
@@ -412,9 +418,80 @@ public class ThePrivateJetAgency extends JFrame {
 
 
 
+        // Action Listener für die Radio-Buttons der Flugzeuggröße:
+
+        // Action Listener für den Radio-Button "Flugzeug Groß"
+        radioButtonFlugzeugGross.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                aktiviertGross = !aktiviertGross;   // Schaltet den Aktivierungsstatus von "Flugzeug Groß" in das Gegenteil um. Von aktiviert in deaktiviert, sprich von true in false
+                                                    // Das Gleiche git auch von deaktiviert in aktiviert.
+
+                // Setzt die Aktivierungsstatus der anderen Radio-Buttons auf deaktiviert (false)
+                aktiviertMittel = false;
+                aktiviertKlein = false;
+
+
+                // Aktualisiert die anderen Radio-Buttons:
+                // Deaktiviert die Auswahl und Bearbeitung der anderen Radio-Buttons, wenn "Flugzeug Groß" aktiviert ist
+                radioButtonFlugzeugKlein.setEnabled(!aktiviertGross);   // Ist "Flugzeug Groß" aktiviert, wird die Bearbeitung von "Flugzeug Klein" deaktiviert
+                                                                        // Ist "Flugzeug Groß" deaktiviert, wird die Bearbeitung von "Flugzeug Klein" aktiviert.
+                radioButtonFlugzeugKlein.setSelected(false);            // Die Auswahl von "Flugzeug Klein" wird gelöscht
+                radioButtonFlugzeugMittel.setEnabled(!aktiviertGross);  // Ist "Flugzeug Groß" aktiviert, wird die Bearbeitung von "Flugzeug Mittel" deaktiviert
+                                                                        // Ist "Flugzeug Groß" deaktiviert, wird die Bearbeitung von "Flugzeug Mittel" aktiviert.
+                radioButtonFlugzeugMittel.setSelected(false);           // Die Auswahl von "Flugzeug Mittel" wird gelöscht
+            }
+        });
 
 
 
+        // Action Listener für den Radio-Button "Flugzeug Mittel"
+        radioButtonFlugzeugMittel.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                aktiviertMittel = !aktiviertMittel;     // Schaltet den Aktivierungsstatus von "Flugzeug Mittel" in das Gegenteil um. Von aktiviert in deaktiviert, sprich von true in false
+                                                        // Das Gleiche git auch von deaktiviert in aktiviert.
+
+                // Setzt die Aktivierungsstatus der anderen Radio-Buttons auf deaktiviert (false)
+                aktiviertGross = false;
+                aktiviertKlein = false;
+
+                // Aktualisiert die anderen Radio-Buttons:
+                // Deaktiviert die Auswahl und Bearbeitung der anderen Radio-Buttons, wenn "Flugzeug Mittel" aktiviert ist
+                radioButtonFlugzeugKlein.setEnabled(!aktiviertMittel);  // Ist "Flugzeug Mittel" aktiviert, wird die Bearbeitung von "Flugzeug Klein" deaktiviert
+                                                                        // Ist "Flugzeug Mittel" deaktiviert, wird die Bearbeitung von "Flugzeug Klein" aktiviert.
+                radioButtonFlugzeugKlein.setSelected(false);            // Die Auswahl von "Flugzeug Klein" wird gelöscht
+                radioButtonFlugzeugGross.setEnabled(!aktiviertMittel);  // Ist "Flugzeug Mittel" aktiviert, wird die Bearbeitung von "Flugzeug Groß" deaktiviert
+                                                                        // Ist "Flugzeug Mittel" deaktiviert, wird die Bearbeitung von "Flugzeug Groß" aktiviert.
+                radioButtonFlugzeugGross.setSelected(false);            // Die Auswahl von "Flugzeug Groß" wird gelöscht
+            }
+        });
+
+
+        // Action Listener für den Radio-Button "Flugzeug Klein"
+        radioButtonFlugzeugKlein.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                aktiviertKlein = !aktiviertKlein;   // Schaltet den Aktivierungsstatus von "Flugzeug Klein" in das Gegenteil um. Von aktiviert in deaktiviert, sprich von true in false
+                                                    // Das Gleiche git auch von deaktiviert in aktiviert.
+
+                // Setzt die Aktivierungsstatus der anderen Radio-Buttons auf deaktiviert (false)
+                aktiviertGross = false;
+                aktiviertMittel = false;
+
+                // Aktualisiert die anderen Radio-Buttons:
+                // Deaktiviert die Auswahl und Bearbeitung der anderen Radio-Buttons, wenn "Flugzeug Klein" aktiviert ist
+                radioButtonFlugzeugMittel.setEnabled(!aktiviertKlein);  // Ist "Flugzeug Klein" aktiviert, wird die Bearbeitung von "Flugzeug Mittel" deaktiviert
+                                                                        // Ist "Flugzeug Klein" deaktiviert, wird die Bearbeitung von "Flugzeug Mittel" aktiviert.
+                radioButtonFlugzeugMittel.setSelected(false);           // Die Auswahl von "Flugzeug Mittel" wird gelöscht
+                radioButtonFlugzeugGross.setEnabled(!aktiviertKlein);   // Ist "Flugzeug Klein" aktiviert, wird die Bearbeitung von "Flugzeug Groß" deaktiviert
+                                                                        // Ist "Flugzeug Klein" deaktiviert, wird die Bearbeitung von "Flugzeug Groß" aktiviert.
+                radioButtonFlugzeugGross.setSelected(false);            // Die Auswahl von "Flugzeug Groß" wird gelöscht
+            }
+        });
 
 
 
