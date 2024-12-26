@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+// GUI-Elemente
 public class ThePrivateJetAgency extends JFrame {
     private JPanel frame;
     private JLabel labelThePrivateJetAgency;
@@ -75,23 +76,26 @@ public class ThePrivateJetAgency extends JFrame {
     private JButton buttonClear;
     private JButton buttonNurAktuelleReisen;
     private JButton alleReisenAnzeigenButton;
-    int day;
 
+    int day; // Variable für Monatstage definieren
+
+    // Beginn Konstruktor
     public ThePrivateJetAgency () {
         setTitle("The Private Jet Agency");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setContentPane(frame);
         setSize(1200,800);
         setVisible(true);
-
         textAreaReiseAusgabe.setPreferredSize(new Dimension(1200,800));
-        textFieldZwischenspeicher.setVisible(false);
 
+        textFieldZwischenspeicher.setVisible(false); // "Zwischenspeicher" für Monatstag nicht sichtbar machen
+
+        // Beginn Buttons für Monatstage mit ActionListeners
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                day = 1;
-                textFieldZwischenspeicher.setText(String.valueOf(day));
+                day = 1; // Variable für Monatstage initialisieren
+                textFieldZwischenspeicher.setText(String.valueOf(day)); // Wert der Variable day im textField "zwischenspeichern"
             }
         });
 
@@ -333,12 +337,93 @@ public class ThePrivateJetAgency extends JFrame {
                 day = 31;
                 textFieldZwischenspeicher.setText(String.valueOf(day));
             }
-        });
+        }); // Ende Buttons für Monatstage mit ActionListeners
+
+
+
+        // Beginn: Mithilfe einer if-else-if-else-Anweisung, die Anzahl der Tage je Monat bzw. comboBoxMonat definieren:
+        comboBoxMonat.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String monat = comboBoxMonat.getSelectedItem().toString();
+
+                // Werden die Monate JAN, MRZ, MAI, JUL, AUG, OKT, DEZ ausgewählt, sind 1 bis 31 Tage/Buttons sichtbar
+                if (monat.equals("Januar") || monat.equals("März") || monat.equals("Mai") || monat.equals("Juli") ||
+                        monat.equals("August") || monat.equals("Oktober") || monat.equals("Dezember")) {
+                    button29.setVisible(true);
+                    button30.setVisible(true);
+                    button31.setVisible(true);
+
+                // Wird Monat FEB ausgewählt, sind 1 bis 28 Tage/Buttons sichtbar
+                } else if (monat.equals("Februar")) {
+                    button29.setVisible(false);
+                    button30.setVisible(false);
+                    button31.setVisible(false);
+
+                // Wird keiner der o. g. Monate ausgewählt (APR, JUN, SEP, NOV), sind 1 bis 30 Tage/Buttons sichtbar
+                } else {
+                    button29.setVisible(true);
+                    button30.setVisible(true);
+                    button31.setVisible(false);
+                }
+            }
+        }); // Ende: Mithilfe einer if-else-if-else-Anweisung, die Anzahl der Tage je Monat bzw. comboBoxMonat definieren
+
+
+        /* Beginn: Andere Möglichkeit: Mithilfe einer switch-Anweisung, die Anzahl der Tage je Monat bzw. comboBoxMonat definieren:
+
+        String monat = comboBoxMonat.getSelectedItem().toString();
+
+        switch (monat) {
+            // Bei den Monaten/Cases JAN, MRZ, MAI, JUL, AUG, OKT, DEZ sind 1 bis 31 Tage/Buttons sichtbar
+            case "Januar":
+            case "März":
+            case "Mai":
+            case "Juli":
+            case "August":
+            case "Oktober":
+            case "Dezember":
+
+                button29.setVisible(true);
+                button30.setVisible(true);
+                button31.setVisible(true);
+                break; // Bricht die Verarbeitung des aktuellen Blocks ab
+
+            // Bei Monat/Cas FEB sind 1 bis 28 Tage/Buttons sichtbar
+            case "Februar":
+
+                button29.setVisible(false);
+                button30.setVisible(false);
+                button31.setVisible(false);
+                break;
+
+            default: // Trifft keine der o. g. Bedingungen zu (APR, JUN, SEP, NOV), sind 1 bis 30 Tage/Buttons sichtbar
+                // Monate mit 30 Tagen:
+                button29.setVisible(true);
+                button30.setVisible(true);
+                button31.setVisible(false);
+                break;
+        }
+
+        Ende: Andere Möglichkeit: Mithilfe einer switch-Anweisung, die Anzahl der Tage je Monat bzw. comboBoxMonat definieren
+        */
 
 
 
 
-    }
+
+
+
+
+
+
+
+    } // Ende Konstruktor
+
+
+
+
 
 
 

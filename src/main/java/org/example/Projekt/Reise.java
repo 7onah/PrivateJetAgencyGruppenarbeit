@@ -2,6 +2,7 @@ package org.example.Projekt;
 
 public class Reise {
 
+    // Attribute definieren
     String reisestatus;
     String startort;
     String zielort;
@@ -14,6 +15,7 @@ public class Reise {
     String abholort;
     String jetGroesse;
 
+    // Konstruktor
     public Reise(String reisestatus, String startort, String zielort, String uhrzeit, int jahr, String monat, int monatstag, int personenanzahl, String kulinarischeVersorgung, String abholort, String jetGroesse) {
         this.reisestatus = reisestatus;
         this.startort = startort;
@@ -28,8 +30,12 @@ public class Reise {
         this.jetGroesse = jetGroesse;
     }
 
-    public String getReisestatus() { return reisestatus; }
+    // Methode getReisestatus
+    public String getReisestatus() {
+        return reisestatus;
+    }
 
+    // Definition wie die Reisen "aussehen"/ausgegeben werden sollen:
     public String reisedaten(){
         return "Reisestatus: " + reisestatus
                 +"\n"
