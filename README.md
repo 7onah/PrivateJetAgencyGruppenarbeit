@@ -18,5 +18,6 @@ ActionListener für die Monatstage Buttons erstellt, die Variable "day" erstellt
 
 26.12.2024 Lea Zint:
 Mithilfe einer if-else-if-else-Anweisung, habe ich die Anzahl der Tage je Monat/comboBoxMonat definiert bzw. die Buttons für die Monatstage un-/sichtbar gemacht.  
-(Ich habe mit der switch-Anweisung eine weitere Möglichkeit gefunden, die Anweisung umzusetzen - habe sie aber auskommentiert.)
+(Ich habe mit der switch-Anweisung eine zweite Möglichkeit gefunden, die Anweisung umzusetzen - habe sie aber mit /* ... */ auskommentiert).
+Ich hab zudem weitere Kommentare zum besseren Verständnis des Codes ergänzt. 
 
