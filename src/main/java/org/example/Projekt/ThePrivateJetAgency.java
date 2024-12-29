@@ -499,7 +499,18 @@ public class ThePrivateJetAgency extends JFrame {
     } // Ende Konstruktor
 
 
+    public String groesseJet () { // Methode zu den Radiobuttons FlugzeugKlein, FlugzeugMittel und FlugzeugGross
+        if (radioButtonFlugzeugKlein.isSelected()) { // im Feld textAreaReiseAusgabe wird später somit die jeweilige ausgewählte Größe ausgegeben
+            return "klein";
+        } else if (radioButtonFlugzeugMittel.isSelected()){
+            return "mittel";
+        } else if (radioButtonFlugzeugGross.isSelected()) {
+            return "groß";
+        } else {
+            return "Keine Auswahl der Flugzeuggröße getroffen"; // bei keiner Auswahl wird dieser Satz ausgegeben
+        }
 
+    }
 
 
 
