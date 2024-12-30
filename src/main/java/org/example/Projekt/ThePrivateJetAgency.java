@@ -77,6 +77,8 @@ public class ThePrivateJetAgency extends JFrame {
     private JButton buttonClear;
     private JButton buttonNurAktuelleReisen;
     private JButton alleReisenAnzeigenButton;
+    public String abholort;
+    public boolean abholservice;
 
 
     int day; // Variable für Monatstage definieren
@@ -493,6 +495,26 @@ public class ThePrivateJetAgency extends JFrame {
             }
         });
 
+        comboBoxAbholserviceAuswahl.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String abholserviceText = (String) comboBoxAbholserviceAuswahl.getSelectedItem();
+                if (abholserviceText.equals("ja")) {
+                 abholservice = true ;
+            } else {
+                    abholservice = false;
+            }
+            if (abholservice) {
+                    labelAbholort.setVisible(true);
+                    textFieldAbholort.setVisible(true);
+                } else{
+                    labelAbholort.setVisible(false);
+                    textFieldAbholort.setVisible(false);
+
+                }
+            }
+        });
+
 
 
 
@@ -517,5 +539,4 @@ public class ThePrivateJetAgency extends JFrame {
 
     public static void main(String[] args) {
         ThePrivateJetAgency tpja1 = new ThePrivateJetAgency();
-    }
-}
+    }}
