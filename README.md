@@ -26,3 +26,6 @@ Durch das Auswählen einer der drei Radio-Buttons für die Flugzeuggröße werde
 
 29.12.2024 Sara Paudler:
 Ich habe die Methode "groesseJet" hinzugefügt, die, nach Auswahl eines Radiobuttons der Flugzeuggröße, dafür sorgt, dass im Feld textAreaReiseAusgabe dann die Wahl ausgegebn wird. Je nach Auswahl des Buttons wird "klein", "mittel" oder "groß" ausgegeben. Wenn kein Button gewählt wurde, dann wird "Keine Auswahl der Flugzeuggröße getroffen" ausgegeben.
+
+30.12.2024 Melina Slaschjow:
+Ich habe die Abholserviceauswahl hinzugefügt, sie zeigt mit hilfer einer Combobox an ob der Abholservice ausgewählt wird oder nicht. Wenn dieser nicht ausgewählt ist (Combobox wählt false) wird das Label und das Textfeld unsichtbar.
