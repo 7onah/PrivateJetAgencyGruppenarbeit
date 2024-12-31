@@ -396,7 +396,7 @@
           <text value="Services"/>
         </properties>
       </component>
-      <component id="cc9a6" class="javax.swing.JCheckBox" binding="checkBoxFruestueck">
+      <component id="cc9a6" class="javax.swing.JCheckBox" binding="checkBoxChampagner">
         <constraints>
           <grid row="15" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -404,7 +404,7 @@
           <text value="Champagner"/>
         </properties>
       </component>
-      <component id="ef755" class="javax.swing.JCheckBox" binding="checkBoxMittagessen">
+      <component id="ef755" class="javax.swing.JCheckBox" binding="checkBoxTrueffelPasta">
         <constraints>
           <grid row="15" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -412,7 +412,7 @@
           <text value="Trüffel Pasta"/>
         </properties>
       </component>
-      <component id="70242" class="javax.swing.JCheckBox" binding="checkBoxAbendessen">
+      <component id="70242" class="javax.swing.JCheckBox" binding="checkBoxKaviar">
         <constraints>
           <grid row="15" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>

@@ -54,9 +54,9 @@ public class ThePrivateJetAgency extends JFrame {
     private JLabel labelPersonenanzahl;
     private JTextField textFieldPersonenanzahl;
     private JLabel labelServices;
-    private JCheckBox checkBoxFruestueck;
-    private JCheckBox checkBoxMittagessen;
-    private JCheckBox checkBoxAbendessen;
+    private JCheckBox checkBoxChampagner;
+    private JCheckBox checkBoxTrueffelPasta;
+    private JCheckBox checkBoxKaviar;
     private JLabel labelAbholservice;
     private JComboBox comboBoxAbholserviceAuswahl;
     private JLabel labelAbholort;
@@ -521,6 +521,8 @@ public class ThePrivateJetAgency extends JFrame {
     } // Ende Konstruktor
 
 
+
+
     public String groesseJet () { // Methode zu den Radiobuttons FlugzeugKlein, FlugzeugMittel und FlugzeugGross
         if (radioButtonFlugzeugKlein.isSelected()) { // im Feld textAreaReiseAusgabe wird später somit die jeweilige ausgewählte Größe ausgegeben
             return "klein";
@@ -533,6 +535,45 @@ public class ThePrivateJetAgency extends JFrame {
         }
 
     }
+
+
+
+    // Beginn Methode verpflegung mithilfe von if-Anweisungen:
+    public String verpflegung () {
+
+        String auswahlVerpflegung = "";
+
+        if (checkBoxChampagner.isSelected()) {
+            auswahlVerpflegung = auswahlVerpflegung + "Champagner";
+        }
+
+        // Werden mehrere Checkboxen ausgewählt, werden sie später in der TextArea-Ausgabe mit einem Komma voneinander getrennt
+        if (checkBoxTrueffelPasta.isSelected()) {
+            if (!auswahlVerpflegung.isEmpty()) {
+                auswahlVerpflegung = auswahlVerpflegung + ", ";
+            }
+            auswahlVerpflegung = auswahlVerpflegung + "Trüffel Pasta";
+        }
+
+        if (checkBoxKaviar.isSelected()) {
+            if (!auswahlVerpflegung.isEmpty()) {
+                auswahlVerpflegung = auswahlVerpflegung + ", ";
+            }
+            auswahlVerpflegung = auswahlVerpflegung + "Kaviar Blinis";
+        }
+
+        // Wenn keine Verpflegung ausgewählt wurde:
+        if (auswahlVerpflegung.isEmpty()) {
+            return "Keine Verpflegung gewünscht";
+        }
+
+        return auswahlVerpflegung;
+
+    } // Ende Methode verpflegung
+
+
+
+
 
 
 
