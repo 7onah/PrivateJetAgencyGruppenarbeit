@@ -29,3 +29,6 @@ Ich habe die Methode "groesseJet" hinzugefügt, die, nach Auswahl eines Radiobut
 
 30.12.2024 Melina Slaschjow:
 Ich habe die Abholserviceauswahl hinzugefügt, sie zeigt mit hilfer einer Combobox an ob der Abholservice ausgewählt wird oder nicht. Wenn dieser nicht ausgewählt ist (Combobox wählt false) wird das Label und das Textfeld unsichtbar.
+
+31.12.2024 Lea Zint:
+Ich hab die Methode "public String verpflegung ()" hinzugefügt. Dafür habe ich den String auswahlVerpflegung definiert und initialisiert und die drei checkBoxen Champagner, Trüffel Pasta, Kaviar mit if-Anweisungen ausgestattet. Weiterhin habe ich Kommentare zum besseren Verständnis ergänzt. 
