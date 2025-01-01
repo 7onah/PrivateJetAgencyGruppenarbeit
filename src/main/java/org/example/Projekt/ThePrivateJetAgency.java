@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 // GUI-Elemente
 public class ThePrivateJetAgency extends JFrame {
@@ -80,8 +81,12 @@ public class ThePrivateJetAgency extends JFrame {
     public String abholort;
     public boolean abholservice;
 
-
     int day; // Variable für Monatstage definieren
+    private int monatstag;  // Variable welche den Monatstag in der Reise ausgibt
+
+    String reisestatus; // Variable die den Reisestatus angibt
+
+    public ArrayList<Reise> reiseliste = new ArrayList<Reise>();    // Erstellen einer ArrayList namens "reiseliste", die aus einzelnen Reisen besteht
 
     private boolean aktiviertGross = false;     // Variable, die den Aktivierungszustand des Radio-Buttons "aktiviertGross" beschreibt. Der initiale Zustand ist false, sprich deaktiviert
     private boolean aktiviertMittel = false;    // Variable, die den Aktivierungszustand des Radio-Buttons "aktiviertMittel" beschreibt. Der initiale Zustand ist false, sprich deaktiviert
@@ -495,6 +500,7 @@ public class ThePrivateJetAgency extends JFrame {
             }
         });
 
+
         comboBoxAbholserviceAuswahl.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -515,6 +521,16 @@ public class ThePrivateJetAgency extends JFrame {
             }
         });
 
+
+
+        // Der Speichern-Button initiiert die Methode ausgeben:
+        buttonSpeichern.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ausgeben();
+
+            }
+        });
 
 
 
@@ -573,8 +589,194 @@ public class ThePrivateJetAgency extends JFrame {
 
 
 
+// Beginn der Methode ausgeben
+    public void ausgeben() {
+
+        try {
+            reisestatus = "Reise steht noch aus";   // wird eine Reise über das GUI konfiguriert, wird dieser Reise automatisch der Reisestatus "Reise steht noch aus" zugewiesen
+                                                    // Diese Voreinstellung wird gewählt, da es unlogisch wäre, einem Nutzer die Buchung von bereits begonnenen Reisen zu ermöglichen
 
 
+
+
+
+            // Die Start- und Zielort-Variable der Reise wird definiert:
+            String startort = textFieldStartort.getText();
+            String zielort = textFieldZielort.getText();
+
+            // Wird in die Variable Startort oder Zielort nichts eingegeben (Variable bleibt leer) wird eine Fehlermeldung ausgegeben
+            if (startort.isEmpty() || zielort.isEmpty()) {
+                throw new IllegalArgumentException("Bitte geben Sie Start- und Zielort an!");
+            }
+
+            // Entspricht der Startort dem Zielort, wird eine Fehlermeldung ausgegeben
+            if (startort.equals(zielort)) {
+                throw new IllegalArgumentException("Bitte geben Sie einen validen Zielort an!");
+            }
+
+
+
+
+            // Die Uhrzeit Eingabe wird definiert:
+            String uhrzeit = textFieldUhrzeit.getText();
+            String[] uhrzeitTeil = uhrzeit.split(":");  // Die Uhrzeit im Format Stunden:Minuten wird am Doppelpunkt in Stunden und Minuten getrennt
+
+            // Sollte die Unterteilung in Stunden und Minuten nicht erfolgreich sein, so wird eine Fehlermeldung ausgegeben
+            if (uhrzeitTeil.length != 2) {
+                throw new NumberFormatException("Bitte geben Sie eine valide Uhrzeit an" + "\n" + "Die Eingabe muss das Format Stunde:Minute erfüllen");
+            }
+
+            // Der Trennungsteil vor dem Doppelpunkt wird der Variable "stunden" zugeschrieben
+            String stunden = uhrzeitTeil[0];
+            int stundenZahl = Integer.parseInt(stunden);
+
+            // Der Trennungsteil nach dem Doppelpunkt wird der Variable "minuten" zugeschrieben
+            String minuten = uhrzeitTeil[1];
+            int minutenZahl = Integer.parseInt(minuten);
+
+            // Festlegen, dass die angegebene Stunde dem 24-Stunden-Format entsprechen muss.
+            if (stundenZahl < 0 || stundenZahl > 23) {
+                throw new IllegalArgumentException("Bitte geben Sie eine valide Stundenangabe ein");
+            }
+
+            // Sicherstellen, dass die angegebenen Minuten dem 60-Minuten-Format pro Stunde entsprechen.
+            if (minutenZahl < 0 || minutenZahl > 59) {
+                throw new IllegalArgumentException("Bitte geben Sie eine valide Minutenangabe ein");
+            }
+
+
+
+
+            // Die Variable des Jahres durch Auswahl in der Combobox Jahreseingabe definieren:
+            String jahrText = (String) comboBoxJahr.getSelectedItem();
+            int jahr = Integer.parseInt(jahrText);
+
+
+
+
+            // Variable Personenanzahl durch Eingabe im Textfeld für Personenanzahl definieren:
+            String personenanzahlText = textFieldPersonenanzahl.getText();
+
+            // Sollte das Textfeld für Personenanzahl leer sein, dann soll eine Fehlermeldung ausgegeben werden
+            if (personenanzahlText.isEmpty()) {
+                throw new IllegalArgumentException("Bitte geben Sie eine Personenanzahl an!");
+            }
+
+            // Sollte die Personenanzahl kleiner gleich null sein, soll eine Fehlermeldung ausgegeben werden
+            int personenanzahl = Integer.parseInt(personenanzahlText);
+            if (personenanzahl <= 0) {
+                throw new IllegalArgumentException("Bitte geben Sie eine valide Personenanzahl an!");
+            }
+
+
+
+
+            // Variable der Jet Größe durch Aufrufen der Methode "groesseJet" festlegen:
+            String jetGroesse = groesseJet();
+
+
+
+
+            // Variable "monat" wird festgelegt durch die Auswahl in der dafür vorgesehenen ComboBox "comboBoxMonat":
+            String monat = comboBoxMonat.getSelectedItem().toString();
+
+            // Definition der Monatstags-Variable durch Zugriff auf den Zwischenspeicher, welcher die Zahl des Monatstags enthält
+            String monatstagtext = textFieldZwischenspeicher.getText();
+
+
+            // Versuchen den Text aus dem Monatstageszwischenspeicher in eine Zahl umzuwandeln
+            // Ist dies nicht möglich oder der Monatstag ist kleiner gleich 0 oder größer als 31 werden Fehlermeldungen angezeigt
+            try{
+                monatstag = Integer.parseInt(monatstagtext);
+            }catch(IllegalArgumentException ex){
+                if (monatstag <= 0 || monatstag > 31) {
+                    throw new IllegalArgumentException("Bitte wählen Sie einen Tag aus!");
+                }
+            }
+
+
+
+
+            String service = (String) comboBoxAbholserviceAuswahl.getSelectedItem();    // Die Variable "service" wird mit einer der zwei Auswahlmöglichkeiten (ja/nein) der ComboBox "comboBoxAbholserviceAuswahl belegt
+            abholort = textFieldAbholort.getText();    // Die Variable "abholort" wird durch den Inhalt des Textfeldes "textFieldAbholort" definiert
+
+
+
+            // Wenn ein Abholservice gewählt ist und ein Abholort angegeben ist, wird die Reise in die Liste aller Reisen hinzugefügt
+            if (service.equals("ja") && !abholort.isEmpty()) {
+                Reise neu = new Reise(reisestatus, startort, zielort, uhrzeit, jahr, monat, day, personenanzahl, verpflegung(), abholort, jetGroesse);
+                reiseliste.add(neu);    // Reise wird zur Liste aller Reisen hinzugefügt
+
+
+                // Diese neue Reise wird im Anzeigefenster "Reise" nach der Methode "reisedaten" ausgegeben
+                String neueReiseText = neu.reisedaten();
+                textAreaReiseAusgabe.setText(neueReiseText);
+                textAreaBuchungAusgabe.setText(reiselisteAusgabe());    // Außerdem wird die neue Reise durch die Methode "reiselisteAusgabe" mit den schon bestehenden Reisen im Ausgabefenster "alle Reisen" ausgegeben
+            }
+
+
+
+            // Ist ein Abholservice ausgewählt und es wurde kein Abholort angegeben, wird eine Fehlermeldung ausgegeben
+            if (service.equals("ja") && abholort.isEmpty()) {
+                throw new IllegalArgumentException("Bitte geben Sie einen Abholort an!");
+            }
+
+
+
+            // Wenn kein Abholservice gewählt ist und kein Abholort angegeben ist, wird die Reise in die Liste aller Reisen hinzugefügt
+            if (service.equals("nein") && abholort.isEmpty()) {
+                abholort = "Kein Abholservice gewählt";     // Die Variable "abholort" wird mit "Kein Abholservice gewählt" definiert, da der Abholservice abgewählt wurde
+                Reise neu = new Reise(reisestatus, startort, zielort, uhrzeit, jahr, monat, day, personenanzahl, verpflegung(), abholort, jetGroesse);
+                reiseliste.add(neu);     // Reise wird zur Liste aller Reisen hinzugefügt
+
+
+                // Diese neue Reise wird im Anzeigefenster "Reise" nach der Methode "reisedaten" ausgegeben
+                String neueReiseText = neu.reisedaten();
+                textAreaReiseAusgabe.setText(neueReiseText);
+                textAreaBuchungAusgabe.setText(reiselisteAusgabe());    // Außerdem wird die neue Reise durch die Methode "reiselisteAusgabe" mit den schon bestehenden Reisen im Ausgabefenster "alle Reisen" ausgegeben
+            }
+
+
+
+            // Alle Radio Buttons werden wieder zur Bearbeitung aktiviert
+            radioButtonFlugzeugKlein.setEnabled(true);
+            radioButtonFlugzeugMittel.setEnabled(true);
+            radioButtonFlugzeugGross.setEnabled(true);
+
+
+
+
+        // Sollte die Unterteilung in Stunden und Minuten nicht erfolgreich sein, so wird hier das Exception handling betrieben
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Die Stunden und Minuten müssen Zahlen sein.");
+
+        // Gibt die jeweilige Fehlermeldung zurück, wenn eine IllegalArgumentException geworfen wird
+        } catch (IllegalArgumentException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+
+
+
+    }
+// Ende der Methode ausgeben
+
+
+
+// Anfang der Methode reiselisteAusgabe
+
+    // Es werden alle Reisen in der Liste an Reisen ausgegeben
+    // Dabei wird die Ausgabe nach der Methode Reisedaten gestaltet
+    public String reiselisteAusgabe() {
+
+        String gesamteReisenText = "";  // es wird ein String "gesamteReisenText" definiert der zuerst leer ist
+        for (Reise reisen : reiseliste) {
+            gesamteReisenText = gesamteReisenText + "\n" + reisen.reisedaten(); // Zu dem zuvor definierten String werden nun die Reisen aus der Reiseliste hinzugefügt, wobei das Ausgabeformat die Methode reisedaten festlegt
+        }
+
+        return gesamteReisenText; // Zurückgegeben wird der nun mit Reisen gefüllte String "gesamteReisenText"
+    }
+
+// Ende der Methode reiselisteAusgabe
 
 
 

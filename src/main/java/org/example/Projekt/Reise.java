@@ -11,7 +11,7 @@ public class Reise {
     String monat;
     int monatstag;
     int personenanzahl;
-    String kulinarischeVersorgung;
+    String verpflegung;
     String abholort;
     String jetGroesse;
 
@@ -25,7 +25,7 @@ public class Reise {
         this.monat = monat;
         this.monatstag = monatstag;
         this.personenanzahl = personenanzahl;
-        this.kulinarischeVersorgung = kulinarischeVersorgung;
+        this.verpflegung = kulinarischeVersorgung;
         this.abholort = abholort;
         this.jetGroesse = jetGroesse;
     }
@@ -44,7 +44,7 @@ public class Reise {
                 + "Abflug um " + uhrzeit + " den " + monatstag + ". " + monat + " " + jahr + "\n"
                 + "Anzahl der Reisenden: " + personenanzahl + "\n"
                 + "Gewählte Flugzeuggröße: " + jetGroesse + "\n"
-                + "Kulinarische Versorgung: " + kulinarischeVersorgung +"\n"
+                + "Kulinarische Versorgung: " + verpflegung +"\n"
                 + "Abholservice: " + abholort +"\n"
                 +"\n"
                 +"\n"
