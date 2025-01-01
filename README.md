@@ -32,3 +32,8 @@ Ich habe die Abholserviceauswahl hinzugefügt, sie zeigt mit hilfer einer Combob
 
 31.12.2024 Lea Zint:
 Ich hab die Methode "public String verpflegung ()" hinzugefügt. Dafür habe ich den String auswahlVerpflegung definiert und initialisiert und die drei checkBoxen Champagner, Trüffel Pasta, Kaviar mit if-Anweisungen ausgestattet. Weiterhin habe ich Kommentare zum besseren Verständnis ergänzt. 
+
+01.01.2025 Jonah Suiter:
+Zu Beginn habe ich eine Arraylist "reiseliste" erstellt, in die alle konfigurierten Reisen hinzugefüht werden
+Danach habe einen Speichern Button hinzugefügt welcher die Methode "ausgeben" aufruft.
+Ich habe mich dazu entschieden die Methode "ausgeben" zu erstellen, damit der Speichern Button übersichtlich bleibt. In die Methode habe ich den Code geschrieben welcher das Zusammenfügen von Variablen, Exception handling, einschränken von Eingaben um nur logische und sinnvolle Werte zu erlauben und das erstellen von einer neuen Reise umfasst. Dadurch konnte ich langen Code übersichtlicher und logischer struckturieren. Außerdem habe ich eine Methode "reiselisteAusgabe" erstellt, die alle Reisen in einem dafür vorgesehenen Bereich auf der GUI ausgibt.
