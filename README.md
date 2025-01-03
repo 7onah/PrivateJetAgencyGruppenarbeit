@@ -33,6 +33,9 @@ Ich habe die Abholserviceauswahl hinzugefügt, sie zeigt mit hilfer einer Combob
 31.12.2024 Lea Zint:
 Ich hab die Methode "public String verpflegung ()" hinzugefügt. Dafür habe ich den String auswahlVerpflegung definiert und initialisiert und die drei checkBoxen Champagner, Trüffel Pasta, Kaviar mit if-Anweisungen ausgestattet. Weiterhin habe ich Kommentare zum besseren Verständnis ergänzt. 
 
+03.01.2025:
+ich habe die die Methode Initialisierung Objekte hinzugefügt wird, in der die Vergangenen Reisen angezeigt werden.
+
 01.01.2025 Jonah Suiter:
 Zu Beginn habe ich eine Arraylist "reiseliste" erstellt, in die alle konfigurierten Reisen hinzugefüht werden
 Danach habe einen Speichern Button hinzugefügt welcher die Methode "ausgeben" aufruft.
