@@ -42,6 +42,4 @@ Ich habe mich dazu entschieden die Methode "ausgeben" zu erstellen, damit der Sp
 Ich habe die die Methode Initialisierung Objekte hinzugefügt, welche aus festee, schon bestehendee Reisen besteht.
 
 04.01.2025 Jonah Suiter:
-Hinzufügen des "nur geplante Reisen"-Buttons, der Methode "filtern" und dem "alle Reisen anzeigen"-Button. Der "nur geplante Reisen"-Button initiiert die Methode "filtern". Dadurch werden alle Reisen mit dem Reisestatus "Reise steht noch aus" ausgegeben. Um das zu erreichen, habe ich eine Arraylist names "gefilterteReisen" erstellt in die alle Reisen mit diesem Reisestatus gespeichert werden.
-
-Der "alle Reisen anzeigen"-Button hingegen gibt alle Reisen ungefiltert aus
+Hinzufügen des "nur geplante Reisen"-Buttons, der Methode "filtern" und dem "alle Reisen anzeigen"-Button. Der "nur geplante Reisen"-Button initiiert die Methode "filtern". Dadurch werden alle Reisen mit dem Reisestatus "Reise steht noch aus" ausgegeben. Um das zu erreichen, habe ich eine Arraylist names "gefilterteReisen" erstellt in die alle Reisen mit diesem Reisestatus gespeichert werden. Der "alle Reisen anzeigen"-Button hingegen gibt alle Reisen ungefiltert aus.
