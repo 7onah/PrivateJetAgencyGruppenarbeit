@@ -76,8 +76,9 @@ public class ThePrivateJetAgency extends JFrame {
     private JScrollPane ScrollPaneAlleReisen;
     private JTextField textFieldZwischenspeicher;
     private JButton buttonClear;
-    private JButton buttonNurAktuelleReisen;
+    private JButton buttonNurGeplanteReisen;
     private JButton alleReisenAnzeigenButton;
+
     public String abholort;
     public boolean abholservice;
 
@@ -92,6 +93,10 @@ public class ThePrivateJetAgency extends JFrame {
     private boolean aktiviertMittel = false;    // Variable, die den Aktivierungszustand des Radio-Buttons "aktiviertMittel" beschreibt. Der initiale Zustand ist false, sprich deaktiviert
     private boolean aktiviertKlein = false;     // Variable, die den Aktivierungszustand des Radio-Buttons "aktiviertKlein" beschreibt. Der initiale Zustand ist false, sprich deaktiviert
 
+
+    private ArrayList<Reise> gefilterteReisen = new ArrayList<>();  // Erstellen einer ArrayList namens "gefilterteReisen", die Reisen mit einem definierten Kriterium enthält
+
+
     // Beginn Konstruktor
     public ThePrivateJetAgency () {
         setTitle("The Private Jet Agency");
@@ -102,6 +107,14 @@ public class ThePrivateJetAgency extends JFrame {
         textAreaReiseAusgabe.setPreferredSize(new Dimension(1200,800));
 
         textFieldZwischenspeicher.setVisible(false); // "Zwischenspeicher" für Monatstag nicht sichtbar machen
+
+        initObjekte(); // die Methode initObjekte wird hier initiiert. Dadurch werden die festen Objekte/feste Reisen der Array Liste "reiseliste" hinzugefügt.
+
+        textAreaBuchungAusgabe.setText(reiselisteAusgabe()); // Die Methode "reiselisteAusgabe" wird in der Textarea "textAreaBuchungAusgabe" ausgegeben
+
+
+        // <editor-fold desc="Buttons Monatstage">
+
 
         // Beginn Buttons für Monatstage mit ActionListeners
         button1.addActionListener(new ActionListener() {
@@ -352,7 +365,9 @@ public class ThePrivateJetAgency extends JFrame {
             }
         }); // Ende Buttons für Monatstage mit ActionListeners
 
+        // </editor-fold>
 
+        // <editor-fold desc="comboBox Monat">
 
         // Beginn: Mithilfe einer if-else-if-else-Anweisung, die Anzahl der Tage je Monat bzw. comboBoxMonat definieren:
         comboBoxMonat.addActionListener(new ActionListener() {
@@ -422,8 +437,9 @@ public class ThePrivateJetAgency extends JFrame {
         Ende: Andere Möglichkeit: Mithilfe einer switch-Anweisung, die Anzahl der Tage je Monat bzw. comboBoxMonat definieren
         */
 
+        // </editor-fold>
 
-
+        // <editor-fold desc="Radio-Buttons Flugzeuggröße">
 
         // Action Listener für die Radio-Buttons der Flugzeuggröße:
 
@@ -500,6 +516,9 @@ public class ThePrivateJetAgency extends JFrame {
             }
         });
 
+        // </editor-fold>
+
+        // <editor-fold desc="comboBox Abholservice">
 
         comboBoxAbholserviceAuswahl.addActionListener(new ActionListener() {
             @Override
@@ -521,7 +540,9 @@ public class ThePrivateJetAgency extends JFrame {
             }
         });
 
+        // </editor-fold>
 
+        // <editor-fold desc="Speichern Button">
 
         // Der Speichern-Button initiiert die Methode ausgeben:
         buttonSpeichern.addActionListener(new ActionListener() {
@@ -532,12 +553,37 @@ public class ThePrivateJetAgency extends JFrame {
             }
         });
 
+        // </editor-fold>
 
+        // <editor-fold desc="nur geplante Reisen Button">
+
+        // Dieser Button hat die Aufgabe die Methode "filtern" zu initiieren. Dadurch werden in der Textarea "textAreaBuchungAusgabe" nur die Reisen angezeigt mit den Reisestatus "Reise steht noch aus"
+        buttonNurGeplanteReisen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textAreaBuchungAusgabe.setText(null);   // Zuerst wird die Textarea komplett geleert
+                filtern();  // die Methode "filtern" wird initialisiert
+            }
+        });
+
+        // </editor-fold>
+
+        // <editor-fold desc="alle Reisen anzeigen Button">
+
+        // Dieser Button hat die Aufgabe alle Reisen in der Textarea "textAreaBuchungAusgabe" anzuzeigen
+        alleReisenAnzeigenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textAreaBuchungAusgabe.setText(reiselisteAusgabe());    // Die Methode "reiselisteAusgabe" wird initiiert und in der Textarea "textAreaBuchungAusgabe" ausgegeben
+            }
+        });
+
+        // </editor-fold>
 
     } // Ende Konstruktor
 
 
-
+    // <editor-fold desc="Methode Flugzeuggröße">
 
     public String groesseJet () { // Methode zu den Radiobuttons FlugzeugKlein, FlugzeugMittel und FlugzeugGross
         if (radioButtonFlugzeugKlein.isSelected()) { // im Feld textAreaReiseAusgabe wird später somit die jeweilige ausgewählte Größe ausgegeben
@@ -552,7 +598,9 @@ public class ThePrivateJetAgency extends JFrame {
 
     }
 
+    // </editor-fold>
 
+    // <editor-fold desc="Methode Verpflegung">
 
     // Beginn Methode verpflegung mithilfe von if-Anweisungen:
     public String verpflegung () {
@@ -587,9 +635,11 @@ public class ThePrivateJetAgency extends JFrame {
 
     } // Ende Methode verpflegung
 
+    // </editor-fold>
 
+    // <editor-fold desc="Methode ausgeben">
 
-// Beginn der Methode ausgeben
+    // Beginn der Methode ausgeben
     public void ausgeben() {
 
         try {
@@ -758,11 +808,13 @@ public class ThePrivateJetAgency extends JFrame {
 
 
     }
-// Ende der Methode ausgeben
+    // Ende der Methode ausgeben
 
+    // </editor-fold>
 
+    // <editor-fold desc="Methode reiselisteAusgabe">
 
-// Anfang der Methode reiselisteAusgabe
+    // Anfang der Methode reiselisteAusgabe
 
     // Es werden alle Reisen in der Liste an Reisen ausgegeben
     // Dabei wird die Ausgabe nach der Methode Reisedaten gestaltet
@@ -776,9 +828,13 @@ public class ThePrivateJetAgency extends JFrame {
         return gesamteReisenText; // Zurückgegeben wird der nun mit Reisen gefüllte String "gesamteReisenText"
     }
 
-// Ende der Methode reiselisteAusgabe
+    // Ende der Methode reiselisteAusgabe
 
-    public void InitObjekte() {
+    // </editor-fold>
+
+    // <editor-fold desc="Methode initObjekte">
+
+    public void initObjekte() {
         Reise r1= new Reise("Reise wurde schon in der Vergangenheit angetreten","München","New York", "07:30",2024,"Juli",11,6, "Trüffel Platte","Hotel Bergblick", "mittel");
         reiseliste.add(r1);
         Reise r2= new Reise("Reise wurde schon in der Vergangenheit angetreten","Los Angeles","Vancouver","14:20",2023,"September",21,3,"Keine kulinarischen Service ausgewählt","Kein Abholservice ausgewählt","klein");
@@ -787,6 +843,34 @@ public class ThePrivateJetAgency extends JFrame {
         reiseliste.add(r3);
     }
 
+    // </editor-fold>
+
+    // <editor-fold desc="Methode filtern">
+
+    // Die Methode "filtern" filtert alle Reisen nach dem Kriterium Reisestatus. Ist der Reisestatus einer Reise "Reise steht noch aus", dann wird diese Reise der Array Liste gefilterteReisen hinzugefügt.
+    public void filtern() {
+        String gefilterteReisenText = "";   // es wird ein String "gefilterteReisenText" definiert der zuerst leer ist
+
+        for (Reise gefilterteReise : reiseliste) {
+
+            if (gefilterteReise.getReisestatus().equals("Reise steht noch aus")) {  // Prüft, ob der Reisestatus "Reise steht noch aus" ist
+                gefilterteReisen.add(gefilterteReise);  // Fügt die Reise zur Liste "gefilterteReisen" hinzu
+
+                String gefilterteReiseText = gefilterteReise.reisedaten();  // Dem zuvor definierten String wird nun die Reise aus der Array Liste "gefiltertenReise" hinzugefügt, wobei das Ausgabeformat die Methode reisedaten festlegt
+
+                gefilterteReisenText = gefilterteReisenText + gefilterteReiseText;  // Die aktuelle gefilterte Reise in Textform wird an den String aller zuvor gefilterten Reisen in Textform angehängt
+            }
+        }
+
+        if (gefilterteReisen.isEmpty()) {   // Überprüft, ob keine Reisen gefiltert wurden
+            textAreaBuchungAusgabe.setText("Keine Reise steht noch aus.");   // Falls keine Reisen übrig sind, zeigt es eine Meldung in "textAreaBuchungAusgabe" an
+
+        } else {
+            textAreaBuchungAusgabe.setText(gefilterteReisenText);  // Falls gefilterte Reisen vorhanden sind, zeigt es diese in Textdarstellung in der "textAreaBuchungAusgabe" an
+        }
+    }
+
+    // </editor-fold>
 
 
     public static void main(String[] args) {
