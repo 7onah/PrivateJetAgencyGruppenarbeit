@@ -580,6 +580,18 @@ public class ThePrivateJetAgency extends JFrame {
 
         // </editor-fold>
 
+        // <editor-fold desc="neue Reise Button">
+
+        //Beim Betätigen des "Neue Reise erstellen" Buttons, wird die Methode clear ausgeführt
+        buttonClear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clear();
+            }
+        });
+
+        //</editor-fold>
+
     } // Ende Konstruktor
 
 
@@ -870,6 +882,34 @@ public class ThePrivateJetAgency extends JFrame {
         }
     }
 
+    // </editor-fold>
+
+    // <editor-fold desc="Methode clear">
+
+    //Die Methode clear wird im "neue Reise erstellen" Button aufgerufen und setzt alle Eingaben und Auswahlen zurück
+    public void clear() {
+
+        reisestatus = "Reise wurde noch nicht angetreten";
+
+        // Nachfolgend werden alle Textfelder und Text Areas auf "" gesetzt, damit die Felder leer sind, um neue Reisen zu erstellen
+        textFieldStartort.setText("");
+        textFieldZielort.setText("");
+        textFieldUhrzeit.setText("");
+        textFieldZwischenspeicher.setText("");
+        textFieldPersonenanzahl.setText("");
+        textFieldAbholort.setText("");
+        textAreaReiseAusgabe.setText("");
+
+        //Die vorherige Auswahl der Flugzeuggröße wird aufgehoben, alle Buttons sind zur Auswahl wieder verfügbar
+        radioButtonFlugzeugGross.setEnabled(true);
+        radioButtonFlugzeugMittel.setEnabled(true);
+        radioButtonFlugzeugKlein.setEnabled(true);
+
+        //Die Auswahl der Checkboxen wird zurückgesetzt
+        checkBoxChampagner.setSelected(false);
+        checkBoxTrueffelPasta.setSelected(false);
+        checkBoxKaviar.setSelected(false);
+    }
     // </editor-fold>
 
 
