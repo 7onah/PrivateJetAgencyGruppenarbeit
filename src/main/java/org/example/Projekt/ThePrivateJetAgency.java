@@ -93,9 +93,9 @@ public class ThePrivateJetAgency extends JFrame {
     private boolean aktiviertMittel = false;    // Variable, die den Aktivierungszustand des Radio-Buttons "aktiviertMittel" beschreibt. Der initiale Zustand ist false, sprich deaktiviert
     private boolean aktiviertKlein = false;     // Variable, die den Aktivierungszustand des Radio-Buttons "aktiviertKlein" beschreibt. Der initiale Zustand ist false, sprich deaktiviert
 
-
     private ArrayList<Reise> gefilterteReisen = new ArrayList<>();  // Erstellen einer ArrayList namens "gefilterteReisen", die Reisen mit einem definierten Kriterium enthält
 
+    ButtonGroup jetGroesseGroup = new ButtonGroup(); // Button-Gruppe, um Auswahl wieder löschen zu können
 
     // Beginn Konstruktor
     public ThePrivateJetAgency () {
@@ -592,7 +592,23 @@ public class ThePrivateJetAgency extends JFrame {
 
         //</editor-fold>
 
+        // <editor-fold desc="Button Löschen">
+
+        // Wird Button Reset geklickt, wird Methode "löschen" ausgeführt
+        buttonLoeschen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loeschen();
+            }
+        });
+
+        //</editor-fold>
+
+
+
     } // Ende Konstruktor
+
+
 
 
     // <editor-fold desc="Methode Flugzeuggröße">
@@ -910,7 +926,46 @@ public class ThePrivateJetAgency extends JFrame {
         checkBoxTrueffelPasta.setSelected(false);
         checkBoxKaviar.setSelected(false);
     }
+
+
     // </editor-fold>
+
+    // <editor-fold desc="Methode löschen">
+
+    // Beginn Methode löschen, um alle Texteingaben und Buttons-Auswahl zurückzusetzen
+    public void loeschen () {
+
+        reisestatus = "Reise wurde noch nicht angetreten";
+
+        textFieldStartort.setText("");
+        textFieldZielort.setText("");
+        textFieldUhrzeit.setText("");
+        textFieldZwischenspeicher.setText("");
+        textFieldPersonenanzahl.setText("");
+        textFieldAbholort.setText("");
+        textAreaReiseAusgabe.setText("");
+
+        jetGroesseGroup.clearSelection();
+        radioButtonFlugzeugMittel.setEnabled(true);
+        radioButtonFlugzeugKlein.setEnabled(true);
+        radioButtonFlugzeugGross.setEnabled(true);
+
+        checkBoxChampagner.setSelected(false);
+        checkBoxTrueffelPasta.setSelected(false);
+        checkBoxKaviar.setSelected(false);
+
+        textAreaReiseAusgabe.setText("");
+        textAreaBuchungAusgabe.setText("");
+
+        reiseliste = new ArrayList<>();
+        initObjekte();
+        textAreaBuchungAusgabe.setText(reiselisteAusgabe());
+    }
+    // Ende Methode löschen
+
+    //</editor-fold>
+
+
 
 
     public static void main(String[] args) {
