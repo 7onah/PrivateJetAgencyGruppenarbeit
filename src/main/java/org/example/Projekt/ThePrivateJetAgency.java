@@ -21,7 +21,7 @@ public class ThePrivateJetAgency extends JFrame {
     private JLabel labelMonat;
     private JLabel labelMonatstag;
     private JComboBox comboBoxMonat;
-    public JButton button1;
+    private JButton button1;
     private JButton button2;
     private JButton button3;
     private JButton button4;
@@ -79,23 +79,21 @@ public class ThePrivateJetAgency extends JFrame {
     private JButton buttonNurGeplanteReisen;
     private JButton alleReisenAnzeigenButton;
 
-    public String abholort;
-    public boolean abholservice;
+    private String abholort;
+    private boolean abholservice;
 
-    int day; // Variable für Monatstage definieren
+    private int day; // Variable für Monatstage definieren
     private int monatstag;  // Variable welche den Monatstag in der Reise ausgibt
 
     String reisestatus; // Variable die den Reisestatus angibt
 
-    public ArrayList<Reise> reiseliste = new ArrayList<Reise>();    // Erstellen einer ArrayList namens "reiseliste", die aus einzelnen Reisen besteht
+    private ArrayList<Reise> reiseliste = new ArrayList<Reise>();    // Erstellen einer ArrayList namens "reiseliste", die aus einzelnen Reisen besteht
 
     private boolean aktiviertGross = false;     // Variable, die den Aktivierungszustand des Radio-Buttons "aktiviertGross" beschreibt. Der initiale Zustand ist false, sprich deaktiviert
     private boolean aktiviertMittel = false;    // Variable, die den Aktivierungszustand des Radio-Buttons "aktiviertMittel" beschreibt. Der initiale Zustand ist false, sprich deaktiviert
     private boolean aktiviertKlein = false;     // Variable, die den Aktivierungszustand des Radio-Buttons "aktiviertKlein" beschreibt. Der initiale Zustand ist false, sprich deaktiviert
 
     private ArrayList<Reise> gefilterteReisen = new ArrayList<>();  // Erstellen einer ArrayList namens "gefilterteReisen", die Reisen mit einem definierten Kriterium enthält
-
-    ButtonGroup jetGroesseGroup = new ButtonGroup(); // Button-Gruppe, um Auswahl wieder löschen zu können
 
     // Beginn Konstruktor
     public ThePrivateJetAgency () {
@@ -945,7 +943,6 @@ public class ThePrivateJetAgency extends JFrame {
         textFieldAbholort.setText("");
         textAreaReiseAusgabe.setText("");
 
-        jetGroesseGroup.clearSelection();
         radioButtonFlugzeugMittel.setEnabled(true);
         radioButtonFlugzeugKlein.setEnabled(true);
         radioButtonFlugzeugGross.setEnabled(true);
