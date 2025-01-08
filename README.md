@@ -1,9 +1,11 @@
 20.12.2024 Jonah Suiter:
 Nach der mündlichen Besprechung und Festlegung der GUI-Oberfläche, haben wir sie in Intellij umgesetzt.
 
+ 
 20.12.2024 Sara Paudler:
 Weiterhin haben wir besprochen, welche Methoden wir benötigen und unter uns aufgeteilt, wer welche und wann umsetzt.
 
+ 
 22.12.2024 Sara Paudler:
 Konstruktor in "The Private Jet Agency" Klasse angelegt, Größe der Text Area "Reiseausgabe" angepasst sowie eine main Methode erstellt & hinzugefügt.
 
