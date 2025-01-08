@@ -52,3 +52,6 @@ Die Methode "loeschen()" soll alle Texteingaben und jede Buttons-Auswahl lösche
 
 08.01.2025 Sara Paudler:
 In der Klasse "Reise" unsere Variablen auf private gesetzt, damit dies übergreifend übereinstimmt.
+
+08.01.2025 Lea Zint:
+Bisher hat die Methode clear und löschen die RadioButtons nicht sauber zurückgesetzt. Das Problem habe ich nun behoben, indem ich die RadioButtons um .setSelected(false) ergänzt habe.
