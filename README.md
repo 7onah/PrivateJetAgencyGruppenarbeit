@@ -1,6 +1,11 @@
 20.12.2024 Jonah Suiter:
 Nach der mündlichen Besprechung und Festlegung der GUI-Oberfläche, haben wir sie in Intellij umgesetzt.
 
+Klasse: ThePrivateJetAgency und ThePrivateJetAgency.form
+Zeitaufwand: 40 min
+- GUI Oberfläche erstellen
+
+
 20.12.2024 Sara Paudler:
 Weiterhin haben wir besprochen, welche Methoden wir benötigen und unter uns aufgeteilt, wer welche und wann umsetzt.
  
@@ -27,6 +32,12 @@ Methode bzw. GUI-Element: comboBoxMonat
 26.12.2024 Jonah Suiter:
 Durch das Auswählen einer der drei Radio-Buttons für die Flugzeuggröße werden die restlichen zwei von der Bearbeitung ausgenommen. Das konnte ich durch die Methode "setEnabled" erzielen. Zusätzlich werden andere ausgewählte Radio-Buttons, welche die Flugzeuggröße festlegen, abgewählt. Dafür habe ich die Methode "setSelected" verwendet um gleichzeitiges, mehrfaches Auswählen von Radio-Buttons zu verhindern. Dieser Mechanismus stellt sicher, dass immer nur ein Radio-Button gleichzeitig aktiviert ist um eine eindeutige Auswahl der Flugzeuggröße zu gewährleisten.
 
+Klasse: ThePrivateJetAgency
+Zeitaufwand: 40 min
+- Action Listener für Radio Buttons Flugzeuggröße generieren
+- Schutzmechaninsmus erstellen, damit nur eine der drei Flugzeugrößen gleichzeitig ausgewählt werden kann
+
+
 29.12.2024 Sara Paudler:
 Ich habe die Methode "groesseJet" hinzugefügt, die, nach Auswahl eines Radiobuttons der Flugzeuggröße, dafür sorgt, dass im Feld textAreaReiseAusgabe dann die Wahl ausgegebn wird. Je nach Auswahl des Buttons wird "klein", "mittel" oder "groß" ausgegeben. Wenn kein Button gewählt wurde, dann wird "Keine Auswahl der Flugzeuggröße getroffen" ausgegeben.
 
@@ -46,11 +57,28 @@ Zu Beginn habe ich eine Arraylist "reiseliste" erstellt, in die alle konfigurier
 Danach habe einen Speichern Button hinzugefügt welcher die Methode "ausgeben" aufruft.
 Ich habe mich dazu entschieden die Methode "ausgeben" zu erstellen, damit der Speichern Button übersichtlich bleibt. In die Methode habe ich den Code geschrieben welcher das Zusammenfügen von Variablen, Exception handling, einschränken von Eingaben um nur logische und sinnvolle Werte zu erlauben und das erstellen von einer neuen Reise umfasst. Dadurch konnte ich langen Code übersichtlicher und logischer struckturieren. Außerdem habe ich eine Methode "reiselisteAusgabe" erstellt, die alle Reisen in einem dafür vorgesehenen Bereich auf der GUI ausgibt.
 
+Klasse: ThePrivateJetAgency
+Zeitaufwand: 3:15 h
+- Arraylist "reiseliste" erstellt
+- Action Listener für Speichern Button hinzugefügt, welcher die Methode "ausgeben" aufruft
+- Methode "ausgeben" entwickeln, welche das Zusammenfügen von Variablen, Exception handling, einschränken von Eingaben um nur sinnvolle Werte zu erlauben und erstellen von einer neuen Reise umfasst
+- Methode "reiselisteAusgabe" erstellt, die alle Reisen in einem dafür vorgesehenen Bereich auf der GUI ausgibt
+
+
 03.01.2025 Melina Slaschjow:
 Ich habe die die Methode Initialisierung Objekte hinzugefügt, welche aus fixen, schon bestehenden Reisen besteht.
 
 04.01.2025 Jonah Suiter:
 Hinzufügen des "nur geplante Reisen"-Buttons, der Methode "filtern" und dem "alle Reisen anzeigen"-Button. Der "nur geplante Reisen"-Button initiiert die Methode "filtern". Dadurch werden alle Reisen mit dem Reisestatus "Reise steht noch aus" ausgegeben. Um das zu erreichen, habe ich eine Arraylist names "gefilterteReisen" erstellt in die alle Reisen mit diesem Reisestatus gespeichert werden. Der "alle Reisen anzeigen"-Button hingegen gibt alle Reisen ungefiltert aus.
+
+Klasse: ThePrivateJetAgency
+Zeitaufwand: 2:30 h
+- "nur geplante Reisen"-Button hinzufügen, welcher Methode "filtern" aufruft
+- "alle Reisen anzeigen"-Button hinzufügen
+- erstellen der Methode "filtern", die alle Reisen der Arraylist "reiseliste" nach dem Reisestatus "Reise steht noch aus" filtert und diese geflilterte Reisen in eine neue Arraylist "gefilterteReisen" speichert
+- Arraylist "gefilterteReisen" hinzufügen
+- Action Listener für den "alle Reisen anzeigen"-Button hinzufügen, damit beim Drücken des Buttons alle Reisen ungefiltert ausgegeben werden
+
 
 06.01.2025 Sara Paudler:
 Ich habe die Methode "public void clear()" hinzugefügt, die alle Inhalte aller Textfelder und TextAreas zurücksetzt und sie somit wieder leer macht. Ebenfalls werden die Auswahlen der RadioButtons der Flugzeuggröße und CheckBoxen der Verpflegung aufgehoben. Das dient dazu, dass die Felder und Buttons/checkboxen frei sind, um eine neue Reise hinzuzufügen. Dazu habe ich noch einen ActionListener im "buttonClear" hinzugefügt, der die Methode clear aufruft und ausführt. 
