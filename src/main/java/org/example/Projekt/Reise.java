@@ -3,17 +3,17 @@ package org.example.Projekt;
 public class Reise {
 
     // Attribute definieren
-    String reisestatus;
-    String startort;
-    String zielort;
-    String uhrzeit;
-    int jahr;
-    String monat;
-    int monatstag;
-    int personenanzahl;
-    String verpflegung;
-    String abholort;
-    String jetGroesse;
+    private String reisestatus;
+    private String startort;
+    private String zielort;
+    private String uhrzeit;
+    private int jahr;
+    private String monat;
+    private int monatstag;
+    private int personenanzahl;
+    private String verpflegung;
+    private String abholort;
+    private String jetGroesse;
 
     // Konstruktor
     public Reise(String reisestatus, String startort, String zielort, String uhrzeit, int jahr, String monat, int monatstag, int personenanzahl, String kulinarischeVersorgung, String abholort, String jetGroesse) {
