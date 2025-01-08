@@ -50,3 +50,5 @@ Ich habe die Methode "public void clear()" hinzugefügt, die alle Inhalte aller 
 07.01.2025 Lea Zint:
 Die Methode "loeschen()" soll alle Texteingaben und jede Buttons-Auswahl löschen/zurückzusetzen. Die Methode wird ausgelöst, nachdem der Reset-Button geklickt wurde. Dazu habe ich einen ActionListener erstellt.
 
+08.01.2025 Sara Paudler:
+In der Klasse "Reise" unsere Variablen auf private gesetzt, damit dies übergreifend übereinstimmt.
