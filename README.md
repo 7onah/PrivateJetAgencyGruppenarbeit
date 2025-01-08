@@ -106,4 +106,10 @@ Zeitaufwand: 15 min
 - Vereinfachung und Vereinfachung des Exception handlings
 - Einheitliches Exception handling durch Illegal Argument Exceptions
 
+08.01.2025 Melina Slaschjow:
+Klasse: ThePrivateJetAgency
+die Methode public int monatToMonatZahl(String monat) wurde hinzugefügt, damit der jeweilige Monat zu seiner Zahl zugeordnet werden kann. 
+und es wurde eine Variable für das aktuellesDatum und eingegebenes Datum deklariert um mit hilfe eine if Bedingung zu kontrollieren ob das Datum oder die Uhrzeit in der Vergangenheit liegen  
+
+
 
