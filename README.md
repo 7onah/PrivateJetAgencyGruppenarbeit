@@ -97,3 +97,13 @@ Klasse: ThePrivateJetAgency
 Methode: public void loeschen () und public void clear()
 - Bisher haben Methoden clear und loeschen die RadioButtons nicht sauber zurückgesetzt
 - Problem nun behoben, indem RadioButtons um .setSelected(false) ergänzt wurden
+
+08.01.2025 Jonah Suiter
+Kleine Verbesserung und Vereinfachung des Exception handlings. Ich habe mich dazu entschieden einheitlich Illegal Argument Exceptions zu verwenden und konnte mir dadurch ein catch sparen. Das wäre nur für eine einzige Number Format Exception nötig.
+
+Klasse: ThePrivateJetAgency
+Zeitaufwand: 15 min
+- Vereinfachung und Vereinfachung des Exception handlings
+- Einheitliches Exception handling durch Illegal Argument Exceptions
+
+
