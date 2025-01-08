@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 // GUI-Elemente
@@ -772,6 +773,16 @@ public class ThePrivateJetAgency extends JFrame {
             }
 
 
+            LocalDateTime aktuellesDatum = LocalDateTime.now();
+            LocalDateTime eingegebenesDatum = LocalDateTime.of(jahr,monatToMonatZahl(monat),day,stundenZahl,minutenZahl);
+
+            if (eingegebenesDatum.isBefore(aktuellesDatum)) {
+                textFieldUhrzeit.setText("");
+
+                throw new IllegalArgumentException("Das Datum / Die Uhrzeit liegt in der Vergangenheit.");
+            }
+
+
 
 
             String service = (String) comboBoxAbholserviceAuswahl.getSelectedItem();    // Die Variable "service" wird mit einer der zwei Auswahlmöglichkeiten (ja/nein) der ComboBox "comboBoxAbholserviceAuswahl belegt
@@ -821,6 +832,37 @@ public class ThePrivateJetAgency extends JFrame {
     // Ende der Methode ausgeben
 
     // </editor-fold>
+    public int monatToMonatZahl(String monat) {
+        switch (monat) {
+            case "Januar":
+                return 1;
+            case "February":
+                return 2;
+            case "März":
+                return 3;
+            case "April":
+                return 4;
+            case "Mai":
+                return 5;
+            case "Juni":
+                return 6;
+            case "Juli":
+                return 7;
+            case "August":
+                return 8;
+            case "September":
+                return 9;
+            case "Oktober":
+                return 10;
+            case "November":
+                return 11;
+            case "Dezember":
+                return 12;
+            default:
+                return 0;
+
+        }
+    }
 
     // <editor-fold desc="Methode reiselisteAusgabe">
 
