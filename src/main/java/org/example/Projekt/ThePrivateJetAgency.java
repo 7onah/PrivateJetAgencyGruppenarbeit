@@ -85,7 +85,7 @@ public class ThePrivateJetAgency extends JFrame {
     private int day; // Variable für Monatstage definieren
     private int monatstag;  // Variable welche den Monatstag in der Reise ausgibt
 
-    String reisestatus; // Variable die den Reisestatus angibt
+    private String reisestatus; // Variable die den Reisestatus angibt
 
     private ArrayList<Reise> reiseliste = new ArrayList<Reise>();    // Erstellen einer ArrayList namens "reiseliste", die aus einzelnen Reisen besteht
 
@@ -94,6 +94,7 @@ public class ThePrivateJetAgency extends JFrame {
     private boolean aktiviertKlein = false;     // Variable, die den Aktivierungszustand des Radio-Buttons "aktiviertKlein" beschreibt. Der initiale Zustand ist false, sprich deaktiviert
 
     private ArrayList<Reise> gefilterteReisen = new ArrayList<>();  // Erstellen einer ArrayList namens "gefilterteReisen", die Reisen mit einem definierten Kriterium enthält
+
 
     // Beginn Konstruktor
     public ThePrivateJetAgency () {
@@ -812,27 +813,11 @@ public class ThePrivateJetAgency extends JFrame {
                 textAreaBuchungAusgabe.setText(reiselisteAusgabe());    // Außerdem wird die neue Reise durch die Methode "reiselisteAusgabe" mit den schon bestehenden Reisen im Ausgabefenster "alle Reisen" ausgegeben
             }
 
-
-
-            // Alle Radio Buttons werden wieder zur Bearbeitung aktiviert
-            radioButtonFlugzeugKlein.setEnabled(true);
-            radioButtonFlugzeugMittel.setEnabled(true);
-            radioButtonFlugzeugGross.setEnabled(true);
-
-
-
-
-        // Sollte die Unterteilung in Stunden und Minuten nicht erfolgreich sein, so wird hier das Exception handling betrieben
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(null, "Die Stunden und Minuten müssen Zahlen sein.");
-
-        // Gibt die jeweilige Fehlermeldung zurück, wenn eine IllegalArgumentException geworfen wird
+            // Kein "NumberFormatException ex" möglich, da die Uhrzeit als String angegeben wird
+            // Gibt eine Fehlermeldung zurück, wenn eine IllegalArgumentException geworfen wird
         } catch (IllegalArgumentException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
-
-
-
     }
     // Ende der Methode ausgeben
 
@@ -914,23 +899,25 @@ public class ThePrivateJetAgency extends JFrame {
         textFieldAbholort.setText("");
         textAreaReiseAusgabe.setText("");
 
-        //Die vorherige Auswahl der Flugzeuggröße wird aufgehoben, alle Buttons sind zur Auswahl wieder verfügbar
-        radioButtonFlugzeugGross.setEnabled(true);
-        radioButtonFlugzeugMittel.setEnabled(true);
-        radioButtonFlugzeugKlein.setEnabled(true);
+        // Radiobuttons auf false setzen, damit keiner nach dem Löschen ausgewählt ist
+        radioButtonFlugzeugKlein.setSelected(false);
+        radioButtonFlugzeugMittel.setSelected(false);
+        radioButtonFlugzeugGross.setSelected(false);
 
-        //Die Auswahl der Checkboxen wird zurückgesetzt
         checkBoxChampagner.setSelected(false);
         checkBoxTrueffelPasta.setSelected(false);
         checkBoxKaviar.setSelected(false);
+
+        // Buttons mit true wieder aktivieren und für Benutzereingaben verfügbar machen
+        radioButtonFlugzeugKlein.setEnabled(true);
+        radioButtonFlugzeugMittel.setEnabled(true);
+        radioButtonFlugzeugGross.setEnabled(true);
     }
-
-
     // </editor-fold>
 
     // <editor-fold desc="Methode löschen">
 
-    // Beginn Methode löschen, um alle Texteingaben und Buttons-Auswahl zurückzusetzen
+    // Beginn Methode löschen, um alle Texteingaben und jede Button-Auswahl zurückzusetzen
     public void loeschen () {
 
         reisestatus = "Reise wurde noch nicht angetreten";
@@ -943,13 +930,19 @@ public class ThePrivateJetAgency extends JFrame {
         textFieldAbholort.setText("");
         textAreaReiseAusgabe.setText("");
 
-        radioButtonFlugzeugMittel.setEnabled(true);
-        radioButtonFlugzeugKlein.setEnabled(true);
-        radioButtonFlugzeugGross.setEnabled(true);
+        // Radiobuttons auf false setzen, damit keiner nach dem Löschen ausgewählt ist
+        radioButtonFlugzeugKlein.setSelected(false);
+        radioButtonFlugzeugMittel.setSelected(false);
+        radioButtonFlugzeugGross.setSelected(false);
 
         checkBoxChampagner.setSelected(false);
         checkBoxTrueffelPasta.setSelected(false);
         checkBoxKaviar.setSelected(false);
+
+        // Buttons mit true wieder aktivieren und für Benutzereingaben verfügbar machen
+        radioButtonFlugzeugKlein.setEnabled(true);
+        radioButtonFlugzeugMittel.setEnabled(true);
+        radioButtonFlugzeugGross.setEnabled(true);
 
         textAreaReiseAusgabe.setText("");
         textAreaBuchungAusgabe.setText("");
