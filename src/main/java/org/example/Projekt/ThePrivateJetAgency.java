@@ -700,7 +700,7 @@ public class ThePrivateJetAgency extends JFrame {
 
             // Sollte die Unterteilung in Stunden und Minuten nicht erfolgreich sein, so wird eine Fehlermeldung ausgegeben
             if (uhrzeitTeil.length != 2) {
-                throw new NumberFormatException("Bitte geben Sie eine valide Uhrzeit an" + "\n" + "Die Eingabe muss das Format Stunde:Minute erfüllen");
+                throw new IllegalArgumentException("Bitte geben Sie eine valide Uhrzeit an" + "\n" + "Die Eingabe muss das Format Stunde:Minute erfüllen");
             }
 
             // Der Trennungsteil vor dem Doppelpunkt wird der Variable "stunden" zugeschrieben
@@ -813,8 +813,7 @@ public class ThePrivateJetAgency extends JFrame {
                 textAreaBuchungAusgabe.setText(reiselisteAusgabe());    // Außerdem wird die neue Reise durch die Methode "reiselisteAusgabe" mit den schon bestehenden Reisen im Ausgabefenster "alle Reisen" ausgegeben
             }
 
-            // Kein "NumberFormatException ex" möglich, da die Uhrzeit als String angegeben wird
-            // Gibt eine Fehlermeldung zurück, wenn eine IllegalArgumentException geworfen wird
+            // Gibt die jeweilige Fehlermeldung zurück, wenn eine IllegalArgumentException geworfen wird
         } catch (IllegalArgumentException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
