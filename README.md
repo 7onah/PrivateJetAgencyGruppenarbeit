@@ -1,10 +1,8 @@
 20.12.2024 Jonah Suiter:
 Nach der mündlichen Besprechung und Festlegung der GUI-Oberfläche, haben wir sie in Intellij umgesetzt.
 
- 
 20.12.2024 Sara Paudler:
 Weiterhin haben wir besprochen, welche Methoden wir benötigen und unter uns aufgeteilt, wer welche und wann umsetzt.
-
  
 22.12.2024 Sara Paudler:
 Konstruktor in "The Private Jet Agency" Klasse angelegt, Größe der Text Area "Reiseausgabe" angepasst sowie eine main Methode erstellt & hinzugefügt.
@@ -21,7 +19,6 @@ ActionListener für die Monatstage Buttons erstellt, die Variable "day" erstellt
 26.12.2024 Lea Zint:
 Klasse: ThePrivateJetAgency
 Methode bzw. GUI-Element: comboBoxMonat
-60 Minuten
 - ActionListener für comboBoxMonat generiert
 - Mithilfe einer if-else-if-else-Anweisung, Anzahl der Tage je Monat/comboBox definiert bzw. Monatstage/Buttons un-/sichtbar gemacht
 - Alternative Möglichkeit (einkommentiert): switch-Anweisung
@@ -39,7 +36,6 @@ Ich habe die Abholserviceauswahl hinzugefügt, sie zeigt mit hilfer einer Combob
 31.12.2024 Lea Zint:
 Klasse: ThePrivateJetAgency
 Methode: public String verpflegung ()
-45 Minuten
 - Methode "public String verpflegung ()" hinzugefügt
 - String auswahlVerpflegung definiert und initialisiert
 - Drei checkBoxen Champagner, Trüffel Pasta, Kaviar mit if-Anweisungen ausgestattet
@@ -62,7 +58,6 @@ Ich habe die Methode "public void clear()" hinzugefügt, die alle Inhalte aller 
 07.01.2025 Lea Zint:
 Klasse: ThePrivateJetAgency
 Methode: public void loeschen ()
-45 Minuten
 - Methode loeschen() soll alle Texteingaben und jede Button-Auswahl löschen/zurückzusetzen
 - ActionListener für Löschen-/Reset-Button erstellt, der die Methode auslöst
 
@@ -72,6 +67,5 @@ In der Klasse "Reise" unsere Variablen auf private gesetzt, damit dies übergrei
 08.01.2025 Lea Zint:
 Klasse: ThePrivateJetAgency
 Methode: public void loeschen () und public void clear()
-30 Minuten
 - Bisher haben Methoden clear und loeschen die RadioButtons nicht sauber zurückgesetzt
 - Problem nun behoben, indem RadioButtons um .setSelected(false) ergänzt wurden
