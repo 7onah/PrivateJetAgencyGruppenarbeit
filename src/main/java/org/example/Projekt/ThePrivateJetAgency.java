@@ -88,7 +88,7 @@ public class ThePrivateJetAgency extends JFrame {
 
     private String reisestatus; // Variable die den Reisestatus angibt
 
-    private ArrayList<Reise> reiseliste = new ArrayList<Reise>();    // Erstellen einer ArrayList namens "reiseliste", die aus einzelnen Reisen besteht
+    public ArrayList<Reise> reiseliste = new ArrayList<Reise>();    // Erstellen einer ArrayList namens "reiseliste", die aus einzelnen Reisen besteht
 
     private boolean aktiviertGross = false;     // Variable, die den Aktivierungszustand des Radio-Buttons "aktiviertGross" beschreibt. Der initiale Zustand ist false, sprich deaktiviert
     private boolean aktiviertMittel = false;    // Variable, die den Aktivierungszustand des Radio-Buttons "aktiviertMittel" beschreibt. Der initiale Zustand ist false, sprich deaktiviert
@@ -542,7 +542,7 @@ public class ThePrivateJetAgency extends JFrame {
 
         // </editor-fold>
 
-        // <editor-fold desc="Speichern Button">
+        // <editor-fold desc= "aktuelle Reise speichern Button">
 
         // Der Speichern-Button initiiert die Methode ausgeben:
         buttonSpeichern.addActionListener(new ActionListener() {
@@ -580,7 +580,7 @@ public class ThePrivateJetAgency extends JFrame {
 
         // </editor-fold>
 
-        // <editor-fold desc="neue Reise Button">
+        // <editor-fold desc="neue Reise hinzufügen Button">
 
         //Beim Betätigen des "Neue Reise erstellen" Buttons, wird die Methode clear ausgeführt
         buttonClear.addActionListener(new ActionListener() {
@@ -592,7 +592,7 @@ public class ThePrivateJetAgency extends JFrame {
 
         //</editor-fold>
 
-        // <editor-fold desc="Button Löschen">
+        // <editor-fold desc="Reset Button">
 
         // Wird Button Reset geklickt, wird Methode "löschen" ausgeführt
         buttonLoeschen.addActionListener(new ActionListener() {
@@ -832,6 +832,9 @@ public class ThePrivateJetAgency extends JFrame {
     // Ende der Methode ausgeben
 
     // </editor-fold>
+
+    // <editor-fold desc="Methode Monatszahl zuweisen ">
+
     public int monatToMonatZahl(String monat) {
         switch (monat) {
             case "Januar":
@@ -864,6 +867,8 @@ public class ThePrivateJetAgency extends JFrame {
         }
     }
 
+    // </editor-fold>
+
     // <editor-fold desc="Methode reiselisteAusgabe">
 
     // Anfang der Methode reiselisteAusgabe
@@ -891,7 +896,7 @@ public class ThePrivateJetAgency extends JFrame {
         reiseliste.add(r1);
         Reise r2= new Reise("Reise wurde schon in der Vergangenheit angetreten","Los Angeles","Vancouver","14:20",2023,"September",21,3,"Keine kulinarischen Service ausgewählt","Kein Abholservice ausgewählt","klein");
         reiseliste.add(r2);
-        Reise r3= new Reise("Reise wurde schon in der Vergangenheit angetreten","Wien","Venedig","17:00",2021,"Dezember",3,11,"Champagner","Rizz Carlton Wien","groß");
+        Reise r3= new Reise("Reise wurde schon in der Vergangenheit angetreten","Wien","Venedig","17:00",2021,"Dezember",3,11,"Champagner","Ritz Carlton Wien","groß");
         reiseliste.add(r3);
     }
 
