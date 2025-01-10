@@ -111,5 +111,12 @@ Klasse: ThePrivateJetAgency
 die Methode public int monatToMonatZahl(String monat) wurde hinzugefügt, damit der jeweilige Monat zu seiner Zahl zugeordnet werden kann. 
 und es wurde eine Variable für das aktuellesDatum und eingegebenes Datum deklariert um mit hilfe eine if Bedingung zu kontrollieren ob das Datum oder die Uhrzeit in der Vergangenheit liegen  
 
+09.01.2025 Jonah Suiter:
+Ich habe einen JUnit Test hinzugefügt, der die Methode "reiselisteAusgabe" testet. Im Test werden zuerst zwei Reisen in die Liste aller Reisen (reiseliste) hinzugefügt. Anschließend wird die erwartete Ausgabe definiert, welche die formale Darstellung der Reisen definiert. Die erwartete Ausgabe wird mit der tatsächlichen Ausgabe der Methode "reiselisteAusgabe" verglichen. Durch diesen Test wird sichergestellt, dass die Methode die Reisen in der richtigen Darstellung ausgibt.
+
+Klasse: reiselisteAusgabeTest
+Zeitaufwand: 45 min
+- erzeugen eines JUnit Tests
+- In dem Test wird überprüft, ob die Methode "reiselisteAusgabe" die Reisen in der Reiseliste im korrekten Format ausgibt
 
 
