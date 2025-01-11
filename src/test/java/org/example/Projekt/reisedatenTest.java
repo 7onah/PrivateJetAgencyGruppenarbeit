@@ -12,7 +12,7 @@ class reisedatenTest {
     @Test
     // Es wird die erwartete Ausgabe für die Eingabeparameter definiert.
     // Die erwartete Ausgabe und die tatsächliche Ausgabe (Rückgabe der Methode "reisedaten" bei Eingabe des Objekts "testreise") wird auf Übereinstimmung getestet.
-    void reiselisteTest(){
+    void reisedatenTest(){
         assertEquals("Reisestatus: " + "Reise steht noch aus"
                 +"\n"
                 + "Flug von " + "München" + " nach " + "Las Palmas de Gran Canaria" + "\n"
