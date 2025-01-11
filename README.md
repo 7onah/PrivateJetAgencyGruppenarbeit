@@ -127,5 +127,11 @@ Zeitaufwand: 35 min
 - erzeugen eines JUnit Tests
 - Der Test prüft, ob bei Eingabe einer Reise die Methode "reisedaten" diese korrekt im definierten Format ausgibt.
 
-  11.01.2025 Melina Slaschjow:
-  Anpassung der festen Objekte/festen Reisen, da im vorherigen Schritt ein neues Attribut dem Objekt "Reise" hinzugefügt wurde.
+11.01.2025 Jonah Suiter:
+Hinzufügen des Attributs "abholservice" zum Objekt Reise. Dadurch wird in jeder Reise angezeigt, ob der Abholservice ausgewählt wurde oder nicht
+
+Zeitaufwand: 15 min
+- hinzufügen des Attributs "boolean abholservice" zum Objekt Reise. Dadurch wird in einer Reise angegeben ob der Abholservice gewählt(true) oder nicht gewählt(false) wurde.
+
+11.01.2025 Melina Slaschjow:
+Anpassung der festen Objekte/festen Reisen, da im vorherigen Schritt ein neues Attribut dem Objekt "Reise" hinzugefügt wurde.
