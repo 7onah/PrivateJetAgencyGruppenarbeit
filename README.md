@@ -126,3 +126,6 @@ Klasse: reisedatenTest
 Zeitaufwand: 35 min
 - erzeugen eines JUnit Tests
 - Der Test prüft, ob bei Eingabe einer Reise die Methode "reisedaten" diese korrekt im definierten Format ausgibt.
+
+  11.01.2025 Melina Slaschjow:
+  Anpassung der festen Objekte/festen Reisen, da im vorherigen Schritt ein neues Attribut dem Objekt "Reise" hinzugefügt wurde.
