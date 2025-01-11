@@ -892,11 +892,11 @@ public class ThePrivateJetAgency extends JFrame {
     // <editor-fold desc="Methode initObjekte">
 
     public void initObjekte() {
-        Reise r1= new Reise("Reise wurde schon in der Vergangenheit angetreten","München","New York", "07:30",2024,"Juli",11,6, "Trüffel Platte","Hotel Bergblick", "mittel");
+        Reise r1= new Reise("Reise wurde schon in der Vergangenheit angetreten","München","New York", "07:30",2024,"Juli",11,6, "Trüffel Platte",true,"Hotel Bergblick", "mittel");
         reiseliste.add(r1);
-        Reise r2= new Reise("Reise wurde schon in der Vergangenheit angetreten","Los Angeles","Vancouver","14:20",2023,"September",21,3,"Keine kulinarischen Service ausgewählt","Kein Abholservice ausgewählt","klein");
+        Reise r2= new Reise("Reise wurde schon in der Vergangenheit angetreten","Los Angeles","Vancouver","14:20",2023,"September",21,3,"Keine kulinarischen Service ausgewählt",false,"Kein Abholservice ausgewählt","klein");
         reiseliste.add(r2);
-        Reise r3= new Reise("Reise wurde schon in der Vergangenheit angetreten","Wien","Venedig","17:00",2021,"Dezember",3,11,"Champagner","Ritz Carlton Wien","groß");
+        Reise r3= new Reise("Reise wurde schon in der Vergangenheit angetreten","Wien","Venedig","17:00",2021,"Dezember",3,11,"Champagner",true,"Ritz Carlton Wien","groß");
         reiseliste.add(r3);
     }
 
