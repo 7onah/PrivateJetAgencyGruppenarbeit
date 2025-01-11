@@ -66,7 +66,7 @@ Zeitaufwand: 3:15 h
 
 
 03.01.2025 Melina Slaschjow:
-Ich habe die die Methode Initialisierung Objekte hinzugefügt, welche aus fixen, schon bestehenden Reisen besteht.
+Ich habe die die Methode Initialisierung Objekte hinzugefügt,in der bereits angetrettenen Reisen angezeigt werden.
 
 04.01.2025 Jonah Suiter:
 Hinzufügen des "nur geplante Reisen"-Buttons, der Methode "filtern" und dem "alle Reisen anzeigen"-Button. Der "nur geplante Reisen"-Button initiiert die Methode "filtern". Dadurch werden alle Reisen mit dem Reisestatus "Reise steht noch aus" ausgegeben. Um das zu erreichen, habe ich eine Arraylist names "gefilterteReisen" erstellt in die alle Reisen mit diesem Reisestatus gespeichert werden. Der "alle Reisen anzeigen"-Button hingegen gibt alle Reisen ungefiltert aus.
@@ -119,4 +119,10 @@ Zeitaufwand: 45 min
 - erzeugen eines JUnit Tests
 - In dem Test wird überprüft, ob die Methode "reiselisteAusgabe" die Reisen in der Reiseliste im korrekten Format ausgibt
 
+11.01.2025 Jonah Suiter:
+Erstellen eines JUnit Tests, der die Methode "reisedaten" testet. Ein Objekt "testreise" wird definiert und mit Eingabeparametern belegt. Die erwartete Ausgabe und die tatsächliche Ausgabe (Rückgabe der Methode "reisedaten" bei Eingabe des Objekts "testreise") wird auf Übereinstimmung getestet.
 
+Klasse: reisedatenTest
+Zeitaufwand: 35 min
+- erzeugen eines JUnit Tests
+- Der Test prüft, ob bei Eingabe einer Reise die Methode "reisedaten" diese korrekt im definierten Format ausgibt.
