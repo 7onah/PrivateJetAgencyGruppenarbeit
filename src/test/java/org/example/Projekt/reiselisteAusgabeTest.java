@@ -13,11 +13,11 @@ class reiselisteAusgabeTest {
 
         // Hinzufügen zweier Reizen zur Arraylist "reiseliste"
 
-        Reise reise1 = new Reise("Reise steht noch aus", "München", "Las Palmas de Gran Canaria", "16:00", 2025, "August", 6, 3, "Trüffel Pasta", "Hotel Bergblick", "klein");
+        Reise reise1 = new Reise("Reise steht noch aus", "München", "Las Palmas de Gran Canaria", "16:00", 2025, "August", 6, 3, "Trüffel Pasta", true,"Hotel Bergblick", "klein");
         agency.reiseliste.add(reise1);
 
 
-        Reise reise2 = new Reise("Reise steht noch aus", "München", "Rom", "12:30", 2025, "September", 20, 16, "Kaviar", "Kein Abholservice gewählt", "Groß");
+        Reise reise2 = new Reise("Reise steht noch aus", "München", "Rom", "12:30", 2025, "September", 20, 16, "Kaviar", false,"Kein Abholservice gewählt", "Groß");
         agency.reiseliste.add(reise2);
 
 
@@ -32,7 +32,8 @@ class reiselisteAusgabeTest {
                 "Anzahl der Reisenden: 6\n" +
                 "Gewählte Flugzeuggröße: mittel\n" +
                 "Kulinarische Versorgung: Trüffel Platte\n" +
-                "Abholservice: Hotel Bergblick\n" +
+                "Abholservice ausgewählt: " + true +"\n" +
+                "Abholort: Hotel Bergblick\n" +
                 "\n" +
                 "\n" +
                 "----------------------------------------------------------\n" +
@@ -44,7 +45,8 @@ class reiselisteAusgabeTest {
                 "Anzahl der Reisenden: 3\n" +
                 "Gewählte Flugzeuggröße: klein\n" +
                 "Kulinarische Versorgung: Keine kulinarischen Service ausgewählt\n" +
-                "Abholservice: Kein Abholservice ausgewählt\n" +
+                "Abholservice ausgewählt: " + false +"\n" +
+                "Abholort: Kein Abholservice ausgewählt\n" +
                 "\n" +
                 "\n" +
                 "----------------------------------------------------------\n" +
@@ -56,7 +58,8 @@ class reiselisteAusgabeTest {
                 "Anzahl der Reisenden: 11\n" +
                 "Gewählte Flugzeuggröße: groß\n" +
                 "Kulinarische Versorgung: Champagner\n" +
-                "Abholservice: Ritz Carlton Wien\n" +
+                "Abholservice ausgewählt: " + true +"\n" +
+                "Abholort: Ritz Carlton Wien\n" +
                 "\n" +
                 "\n" +
                 "----------------------------------------------------------\n"+
@@ -68,7 +71,8 @@ class reiselisteAusgabeTest {
                 "Anzahl der Reisenden: 3\n" +
                 "Gewählte Flugzeuggröße: klein\n" +
                 "Kulinarische Versorgung: Trüffel Pasta\n" +
-                "Abholservice: Hotel Bergblick\n" +
+                "Abholservice ausgewählt: " + true +"\n" +
+                "Abholort: Hotel Bergblick\n" +
                 "\n" +
                 "\n" +
                 "----------------------------------------------------------\n" +
@@ -80,7 +84,8 @@ class reiselisteAusgabeTest {
                 "Anzahl der Reisenden: 16\n" +
                 "Gewählte Flugzeuggröße: Groß\n" +
                 "Kulinarische Versorgung: Kaviar\n" +
-                "Abholservice: Kein Abholservice gewählt\n" +
+                "Abholservice ausgewählt: " + false +"\n" +
+                "Abholort: Kein Abholservice gewählt\n" +
                 "\n" +
                 "\n" +
                 "----------------------------------------------------------\n";

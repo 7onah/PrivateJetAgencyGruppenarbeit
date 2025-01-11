@@ -81,7 +81,7 @@ public class ThePrivateJetAgency extends JFrame {
     private JButton alleReisenAnzeigenButton;
 
     private String abholort;
-    private boolean abholservice;
+    private boolean abholservice = true;    // Die initiale Auswahl des Abholservice wird auf true gesetzt, da in der ComboBox "comboBoxAbholserviceAuswahl" der Abholservice standardmäßig mit "ja" ausgewählt ist
 
     private int day; // Variable für Monatstage definieren
     private int monatstag;  // Variable welche den Monatstag in der Reise ausgibt
@@ -792,7 +792,7 @@ public class ThePrivateJetAgency extends JFrame {
 
             // Wenn ein Abholservice gewählt ist und ein Abholort angegeben ist, wird die Reise in die Liste aller Reisen hinzugefügt
             if (service.equals("ja") && !abholort.isEmpty()) {
-                Reise neu = new Reise(reisestatus, startort, zielort, uhrzeit, jahr, monat, day, personenanzahl, verpflegung(), abholort, jetGroesse);
+                Reise neu = new Reise(reisestatus, startort, zielort, uhrzeit, jahr, monat, day, personenanzahl, verpflegung(), abholservice, abholort, jetGroesse);
                 reiseliste.add(neu);    // Reise wird zur Liste aller Reisen hinzugefügt
 
 
@@ -814,7 +814,7 @@ public class ThePrivateJetAgency extends JFrame {
             // Wenn kein Abholservice gewählt ist und kein Abholort angegeben ist, wird die Reise in die Liste aller Reisen hinzugefügt
             if (service.equals("nein") && abholort.isEmpty()) {
                 abholort = "Kein Abholservice gewählt";     // Die Variable "abholort" wird mit "Kein Abholservice gewählt" definiert, da der Abholservice abgewählt wurde
-                Reise neu = new Reise(reisestatus, startort, zielort, uhrzeit, jahr, monat, day, personenanzahl, verpflegung(), abholort, jetGroesse);
+                Reise neu = new Reise(reisestatus, startort, zielort, uhrzeit, jahr, monat, day, personenanzahl, verpflegung(), abholservice, abholort, jetGroesse);
                 reiseliste.add(neu);     // Reise wird zur Liste aller Reisen hinzugefügt
 
 

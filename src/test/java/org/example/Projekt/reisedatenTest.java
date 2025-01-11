@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class reisedatenTest {
 
     // Ein Objekt "testreise" wird definiert und mit Eingabeparametern belegt
-    Reise testreise = new Reise("Reise steht noch aus", "München", "Las Palmas de Gran Canaria", "16:00", 2025, "August", 6, 3, "Trüffel Pasta", "Hotel Bergblick", "klein");
+    Reise testreise = new Reise("Reise steht noch aus", "München", "Las Palmas de Gran Canaria", "16:00", 2025, "August", 6, 3, "Trüffel Pasta", true, "Hotel Bergblick", "klein");
 
     @Test
     // Es wird die erwartete Ausgabe für die Eingabeparameter definiert.
@@ -21,7 +21,8 @@ class reisedatenTest {
                 + "Anzahl der Reisenden: " + 3 + "\n"
                 + "Gewählte Flugzeuggröße: " + "klein" + "\n"
                 + "Kulinarische Versorgung: " + "Trüffel Pasta" +"\n"
-                + "Abholservice: " + "Hotel Bergblick" +"\n"
+                + "Abholservice ausgewählt: " + true +"\n"
+                + "Abholort: " + "Hotel Bergblick" +"\n"
                 +"\n"
                 +"\n"
                 + "----------------------------------------------------------"

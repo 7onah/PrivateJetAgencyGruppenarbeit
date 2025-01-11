@@ -12,11 +12,12 @@ public class Reise {
     private int monatstag;
     private int personenanzahl;
     private String verpflegung;
+    private boolean abholservice;
     private String abholort;
     private String jetGroesse;
 
     // Konstruktor
-    public Reise(String reisestatus, String startort, String zielort, String uhrzeit, int jahr, String monat, int monatstag, int personenanzahl, String kulinarischeVersorgung, String abholort, String jetGroesse) {
+    public Reise(String reisestatus, String startort, String zielort, String uhrzeit, int jahr, String monat, int monatstag, int personenanzahl, String verpflegung, boolean abholservice, String abholort, String jetGroesse) {
         this.reisestatus = reisestatus;
         this.startort = startort;
         this.zielort = zielort;
@@ -25,7 +26,8 @@ public class Reise {
         this.monat = monat;
         this.monatstag = monatstag;
         this.personenanzahl = personenanzahl;
-        this.verpflegung = kulinarischeVersorgung;
+        this.verpflegung = verpflegung;
+        this.abholservice = abholservice;
         this.abholort = abholort;
         this.jetGroesse = jetGroesse;
     }
@@ -45,7 +47,8 @@ public class Reise {
                 + "Anzahl der Reisenden: " + personenanzahl + "\n"
                 + "Gewählte Flugzeuggröße: " + jetGroesse + "\n"
                 + "Kulinarische Versorgung: " + verpflegung +"\n"
-                + "Abholservice: " + abholort +"\n"
+                + "Abholservice ausgewählt: " + abholservice +"\n"
+                + "Abholort: " + abholort +"\n"
                 +"\n"
                 +"\n"
                 + "----------------------------------------------------------"
