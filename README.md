@@ -1,3 +1,9 @@
+Sara Paudler = sarapdl
+Melina Slaschjow = meli0208
+Jonah Suiter = 7onah
+Lea Zint = leazint
+
+
 20.12.2024 Jonah Suiter:
 Nach der mündlichen Besprechung und Festlegung der GUI-Oberfläche, haben wir sie in Intellij umgesetzt.
 
