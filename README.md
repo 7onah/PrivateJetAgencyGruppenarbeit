@@ -123,7 +123,7 @@ Klasse: reiselisteAusgabeTest
 Erstellen eines JUnit Tests, der die Methode "reisedaten" testet. Ein Objekt "testreise" wird definiert und mit Eingabeparametern belegt. Die erwartete Ausgabe und die tatsächliche Ausgabe (Rückgabe der Methode "reisedaten" bei Eingabe des Objekts "testreise") wird auf Übereinstimmung getestet.
 
 Klasse: reisedatenTest
-´- erzeugen eines JUnit Tests
+- erzeugen eines JUnit Tests
 - Der Test prüft, ob bei Eingabe einer Reise die Methode "reisedaten" diese korrekt im definierten Format ausgibt.
 
 11.01.2025 Jonah Suiter:
