@@ -116,7 +116,7 @@ und es wurde eine Variable für das aktuellesDatum und eingegebenes Datum deklar
 Ich habe einen JUnit Test hinzugefügt, der die Methode "reiselisteAusgabe" testet. Im Test werden zuerst zwei Reisen in die Liste aller Reisen (reiseliste) hinzugefügt. Anschließend wird die erwartete Ausgabe definiert, welche die formale Darstellung der Reisen definiert. Die erwartete Ausgabe wird mit der tatsächlichen Ausgabe der Methode "reiselisteAusgabe" verglichen. Durch diesen Test wird sichergestellt, dass die Methode die Reisen in der richtigen Darstellung ausgibt.
 
 Klasse: reiselisteAusgabeTest
-´- erzeugen eines JUnit Tests
+- erzeugen eines JUnit Tests
 - In dem Test wird überprüft, ob die Methode "reiselisteAusgabe" die Reisen in der Reiseliste im korrekten Format ausgibt
 
 11.01.2025 Jonah Suiter:
