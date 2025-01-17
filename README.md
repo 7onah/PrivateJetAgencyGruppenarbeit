@@ -8,7 +8,6 @@ Lea Zint = leazint
 Nach der mündlichen Besprechung und Festlegung der GUI-Oberfläche, haben wir sie in Intellij umgesetzt.
 
 Klasse: ThePrivateJetAgency und ThePrivateJetAgency.form
-Zeitaufwand: 40 min
 - GUI Oberfläche erstellen
 
 
@@ -39,7 +38,6 @@ Methode bzw. GUI-Element: comboBoxMonat
 Durch das Auswählen einer der drei Radio-Buttons für die Flugzeuggröße werden die restlichen zwei von der Bearbeitung ausgenommen. Das konnte ich durch die Methode "setEnabled" erzielen. Zusätzlich werden andere ausgewählte Radio-Buttons, welche die Flugzeuggröße festlegen, abgewählt. Dafür habe ich die Methode "setSelected" verwendet um gleichzeitiges, mehrfaches Auswählen von Radio-Buttons zu verhindern. Dieser Mechanismus stellt sicher, dass immer nur ein Radio-Button gleichzeitig aktiviert ist um eine eindeutige Auswahl der Flugzeuggröße zu gewährleisten.
 
 Klasse: ThePrivateJetAgency
-Zeitaufwand: 40 min
 - Action Listener für Radio Buttons Flugzeuggröße generieren
 - Schutzmechaninsmus erstellen, damit nur eine der drei Flugzeugrößen gleichzeitig ausgewählt werden kann
 
@@ -64,7 +62,6 @@ Danach habe einen Speichern Button hinzugefügt welcher die Methode "ausgeben" a
 Ich habe mich dazu entschieden die Methode "ausgeben" zu erstellen, damit der Speichern Button übersichtlich bleibt. In die Methode habe ich den Code geschrieben welcher das Zusammenfügen von Variablen, Exception handling, einschränken von Eingaben um nur logische und sinnvolle Werte zu erlauben und das erstellen von einer neuen Reise umfasst. Dadurch konnte ich langen Code übersichtlicher und logischer struckturieren. Außerdem habe ich eine Methode "reiselisteAusgabe" erstellt, die alle Reisen in einem dafür vorgesehenen Bereich auf der GUI ausgibt.
 
 Klasse: ThePrivateJetAgency
-Zeitaufwand: 3:15 h
 - Arraylist "reiseliste" erstellt
 - Action Listener für Speichern Button hinzugefügt, welcher die Methode "ausgeben" aufruft
 - Methode "ausgeben" entwickeln, welche das Zusammenfügen von Variablen, Exception handling, einschränken von Eingaben um nur sinnvolle Werte zu erlauben und erstellen von einer neuen Reise umfasst
@@ -78,7 +75,6 @@ Ich habe die die Methode Initialisierung Objekte hinzugefügt,in der bereits ang
 Hinzufügen des "nur geplante Reisen"-Buttons, der Methode "filtern" und dem "alle Reisen anzeigen"-Button. Der "nur geplante Reisen"-Button initiiert die Methode "filtern". Dadurch werden alle Reisen mit dem Reisestatus "Reise steht noch aus" ausgegeben. Um das zu erreichen, habe ich eine Arraylist names "gefilterteReisen" erstellt in die alle Reisen mit diesem Reisestatus gespeichert werden. Der "alle Reisen anzeigen"-Button hingegen gibt alle Reisen ungefiltert aus.
 
 Klasse: ThePrivateJetAgency
-Zeitaufwand: 2:30 h
 - "nur geplante Reisen"-Button hinzufügen, welcher Methode "filtern" aufruft
 - "alle Reisen anzeigen"-Button hinzufügen
 - erstellen der Methode "filtern", die alle Reisen der Arraylist "reiseliste" nach dem Reisestatus "Reise steht noch aus" filtert und diese geflilterte Reisen in eine neue Arraylist "gefilterteReisen" speichert
@@ -108,7 +104,6 @@ Methode: public void loeschen () und public void clear()
 Kleine Verbesserung und Vereinfachung des Exception handlings. Ich habe mich dazu entschieden einheitlich Illegal Argument Exceptions zu verwenden und konnte mir dadurch ein catch sparen. Das wäre nur für eine einzige Number Format Exception nötig.
 
 Klasse: ThePrivateJetAgency
-Zeitaufwand: 15 min
 - Vereinfachung und Vereinfachung des Exception handlings
 - Einheitliches Exception handling durch Illegal Argument Exceptions
 
@@ -121,22 +116,19 @@ und es wurde eine Variable für das aktuellesDatum und eingegebenes Datum deklar
 Ich habe einen JUnit Test hinzugefügt, der die Methode "reiselisteAusgabe" testet. Im Test werden zuerst zwei Reisen in die Liste aller Reisen (reiseliste) hinzugefügt. Anschließend wird die erwartete Ausgabe definiert, welche die formale Darstellung der Reisen definiert. Die erwartete Ausgabe wird mit der tatsächlichen Ausgabe der Methode "reiselisteAusgabe" verglichen. Durch diesen Test wird sichergestellt, dass die Methode die Reisen in der richtigen Darstellung ausgibt.
 
 Klasse: reiselisteAusgabeTest
-Zeitaufwand: 45 min
-- erzeugen eines JUnit Tests
+´- erzeugen eines JUnit Tests
 - In dem Test wird überprüft, ob die Methode "reiselisteAusgabe" die Reisen in der Reiseliste im korrekten Format ausgibt
 
 11.01.2025 Jonah Suiter:
 Erstellen eines JUnit Tests, der die Methode "reisedaten" testet. Ein Objekt "testreise" wird definiert und mit Eingabeparametern belegt. Die erwartete Ausgabe und die tatsächliche Ausgabe (Rückgabe der Methode "reisedaten" bei Eingabe des Objekts "testreise") wird auf Übereinstimmung getestet.
 
 Klasse: reisedatenTest
-Zeitaufwand: 35 min
-- erzeugen eines JUnit Tests
+´- erzeugen eines JUnit Tests
 - Der Test prüft, ob bei Eingabe einer Reise die Methode "reisedaten" diese korrekt im definierten Format ausgibt.
 
 11.01.2025 Jonah Suiter:
 Hinzufügen des Attributs "abholservice" zum Objekt Reise. Dadurch wird in jeder Reise angezeigt, ob der Abholservice ausgewählt wurde oder nicht
 
-Zeitaufwand: 15 min
 - hinzufügen des Attributs "boolean abholservice" zum Objekt Reise. Dadurch wird in einer Reise angegeben ob der Abholservice gewählt(true) oder nicht gewählt(false) wurde.
 
 11.01.2025 Melina Slaschjow:
